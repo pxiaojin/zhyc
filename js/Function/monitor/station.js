@@ -222,7 +222,7 @@ define(['lib/echarts', 'Controller/DataFormat', 'Controller/closeAll','Function/
                     var wd = json[keyAr[i]]['WD'];
                     var rn = format.rn(json[keyAr[i]]['RAIN1']);
                     var rn1 = rn == '0.0 mm' ? '无降水' : rn;
-
+  
                     var live_list = '<li><span class="el_name">气&nbsp;&nbsp;&nbsp;温 :&nbsp;&nbsp;</span><span class="ele">'+format.tt(json[keyAr[i]]['TAVG'])+'</span></li>'+
                     '<li><span class="el_name">降水量 :&nbsp;&nbsp;</span><span class="ele">'+rn1+'</span></li>'+
                     '<li><span class="el_name">相对湿度 :&nbsp;&nbsp;</span><span class="ele">'+format.rh(json[keyAr[i]]['RH'])+'</span></li>'+   
