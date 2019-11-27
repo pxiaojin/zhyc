@@ -1,20 +1,20 @@
 define(['Function/monitor/station', 'Controller/closeAll'], function(station, closeAll) {
     function init(){
-        XHW.C.mouse.addCallback('init_tobacco', function(value){
-            return station.getPopupHtml(value);
-        });
-        XHW.C.mouse.addCallback('init_meteo', function(value){
-            return station.getPopupHtml(value);
-        });
+        // XHW.C.mouse.addCallback('init_tobacco', function(value){
+        //     return station.getPopupHtml(value);
+        // });
+        // XHW.C.mouse.addCallback('init_meteo', function(value){
+        //     return station.getPopupHtml(value);
+        // });
 
         //生长环境监测  适宜度评价
         //------------鼠标指向marker的监听      
-        XHW.C.mouse.addCallback('sui_sta_point', function(value){
-            return station.getPopupHtml(value);
-        });
-        XHW.C.mouse.addCallback('sui_tob_point', function(value){
-            return station.getPopupHtml(value);
-        });
+        // XHW.C.mouse.addCallback('sui_sta_point', function(value){
+        //     return station.getPopupHtml(value);
+        // });
+        // XHW.C.mouse.addCallback('sui_tob_point', function(value){
+        //     return station.getPopupHtml(value);
+        // });
         XHW.C.mapclick.addCallback('sui_sta_point', function(value){
             $('#suitabilityCon').show();
             $('#suitabilityCon .top .title').html(value.name);
@@ -39,12 +39,12 @@ define(['Function/monitor/station', 'Controller/closeAll'], function(station, cl
 
         //适宜度预报
         //------------鼠标指向marker的监听      
-        XHW.C.mouse.addCallback('suiFc_sta_point', function(value){
-            return station.getPopupHtml(value);
-        });
-        XHW.C.mouse.addCallback('suiFc_tob_point', function(value){
-            return station.getPopupHtml(value);
-        });
+        // XHW.C.mouse.addCallback('suiFc_sta_point', function(value){
+        //     return station.getPopupHtml(value);
+        // });
+        // XHW.C.mouse.addCallback('suiFc_tob_point', function(value){
+        //     return station.getPopupHtml(value);
+        // });
         XHW.C.mapclick.addCallback('suiFc_sta_point', function(value){
             $('#suitabilityCon').show();
             $('#suitabilityCon .top .title').html(value.name);
@@ -68,12 +68,12 @@ define(['Function/monitor/station', 'Controller/closeAll'], function(station, cl
         })
 
         // 农事活动预报
-        XHW.C.mouse.addCallback('farm_sta_point', function(value){
-            return station.getPopupHtml(value);
-        });
-        XHW.C.mouse.addCallback('farm_tob_point', function(value){
-            return station.getPopupHtml(value);
-        });
+        // XHW.C.mouse.addCallback('farm_sta_point', function(value){
+        //     return station.getPopupHtml(value);
+        // });
+        // XHW.C.mouse.addCallback('farm_tob_point', function(value){
+        //     return station.getPopupHtml(value);
+        // });
         XHW.C.mapclick.addCallback('farm_sta_point', function(value){
             $('#farmingActivityCon').show();
             $('#farmingActivityCon .top .title').html(value.name);

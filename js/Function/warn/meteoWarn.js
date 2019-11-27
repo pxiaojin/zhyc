@@ -14,9 +14,9 @@ define(['Controller/closeAll'], function(closeAll) {
         key = 'ww_warn';
 
         //------------鼠标指向marker的监听
-        XHW.C.mouse.addCallback(key, function(value){
-            return getPopupHtml(value);
-        });
+        // XHW.C.mouse.addCallback(key, function(value){
+        //     return getPopupHtml(value);
+        // });
     }
 
     init();

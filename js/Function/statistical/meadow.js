@@ -39,9 +39,9 @@ define(['Function/forecast/single_fc', 'Controller/closeAll', 'Controller/public
         type = 'meadow_point';
  
         //------------鼠标指向marker的监听      
-        XHW.C.mouse.addCallback(type, function(value){
-            return station.getPopupHtml(value);
-        });
+        // XHW.C.mouse.addCallback(type, function(value){
+        //     return station.getPopupHtml(value);
+        // });
         XHW.C.mapclick.addCallback(type, function(value){
             $('#monthDataCurveCon').show();
             $('#monthDataCurveCon .top .title').html(value.name);
@@ -72,9 +72,9 @@ define(['Function/forecast/single_fc', 'Controller/closeAll', 'Controller/public
 
 
         // 本季生长气候  月旬数据
-        XHW.C.mouse.addCallback('meadow_season_point', function(value){
-            return station.getPopupHtml(value);
-        });
+        // XHW.C.mouse.addCallback('meadow_season_point', function(value){
+        //     return station.getPopupHtml(value);
+        // });
         XHW.C.mapclick.addCallback('meadow_season_point', function(value){
             $('#monthDataCurveCon').show();
             $('#monthDataCurveCon .top .title').html(value.name);

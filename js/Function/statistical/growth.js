@@ -7,9 +7,9 @@ define(['Function/forecast/single_fc', 'Controller/closeAll',
         type = 'growth_point';
 
         //------------鼠标指向marker的监听      
-        XHW.C.mouse.addCallback(type, function(value){
-            return station.getPopupHtml(value);
-        });
+        // XHW.C.mouse.addCallback(type, function(value){
+        //     return station.getPopupHtml(value);
+        // });
         XHW.C.mapclick.addCallback(type, function(value){
             $('#birthDataCon').show();
             $('#birthDataCon .top .title').html(value.name);
@@ -35,9 +35,9 @@ define(['Function/forecast/single_fc', 'Controller/closeAll',
 
 
         //------------本生长季 生育期     
-        XHW.C.mouse.addCallback('grow_season_point', function(value){
-            return station.getPopupHtml(value);
-        });
+        // XHW.C.mouse.addCallback('grow_season_point', function(value){
+        //     return station.getPopupHtml(value);
+        // });
         XHW.C.mapclick.addCallback('grow_season_point', function(value){
             $('#birthDataCon').show();
             $('#birthDataCon .top .title').html(value.name);

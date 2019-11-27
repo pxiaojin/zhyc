@@ -5,9 +5,9 @@ define(['Function/forecast/single_fc', 'Controller/closeAll'], function(station,
         type = 'day_point';
 
         //------------鼠标指向marker的监听      
-        XHW.C.mouse.addCallback(type, function(value){
-            return station.getPopupHtml(value);
-        });
+        // XHW.C.mouse.addCallback(type, function(value){
+        //     return station.getPopupHtml(value);
+        // });
         XHW.C.mapclick.addCallback(type, function(value){
             $('#dayDataCon').show();
             $('#dayDataCon .top .title').html(value.name);

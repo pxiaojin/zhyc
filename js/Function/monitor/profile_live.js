@@ -105,8 +105,8 @@ define(['Controller/DataFormat', 'Controller/closeAll', 'Function/monitor/Temper
             marker.setStyle(new ol.style.Style({
                 image: new ol.style.Icon(/** @type {olx.style.IconOptions} */({
                     crossOrigin: 'anonymous',
-                    src: './img/halfhour_icon/cww'+imgSrc+'.png',
-                    scale: 0.2,
+                    src: './img/hourWea_icon/cww'+imgSrc+'.png',
+                    scale: 0.3,
                 })),                                        
             }));
 
@@ -147,8 +147,8 @@ define(['Controller/DataFormat', 'Controller/closeAll', 'Function/monitor/Temper
             marker.setStyle(new ol.style.Style({
                 image: new ol.style.Icon(/** @type {olx.style.IconOptions} */({
                     crossOrigin: 'anonymous',
-                    src: './img/halfhour_icon/cww'+imgSrc+'.png',
-                    scale: 0.2,
+                    src: './img/hourWea_icon/cww'+imgSrc+'.png',
+                    scale: 0.3,
                 })),                                        
             }));
 

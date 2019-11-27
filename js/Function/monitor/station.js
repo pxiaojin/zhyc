@@ -21,9 +21,9 @@ define(['lib/echarts', 'Controller/DataFormat', 'Controller/closeAll','Function/
         type_seo = 'tobacco';
         type = 'station';
         //------------鼠标指向marker的监听      
-        XHW.C.mouse.addCallback(type, function(value){
-            return getPopupHtml(value);
-        });
+        // XHW.C.mouse.addCallback(type, function(value){
+        //     return getPopupHtml(value);
+        // });
         XHW.C.mapclick.addCallback(type, function(value){
             $('#ceZhanShiKuangCon').show();
             $('#ceZhanShiKuangCon .popopTab').show();
@@ -33,9 +33,9 @@ define(['lib/echarts', 'Controller/DataFormat', 'Controller/closeAll','Function/
             fc_code = value;
         })
         
-        XHW.C.mouse.addCallback(type_seo, function(value){
-            return getPopupHtml(value);
-        });
+        // XHW.C.mouse.addCallback(type_seo, function(value){
+        //     return getPopupHtml(value);
+        // });
         XHW.C.mapclick.addCallback(type_seo, function(value){     
             $('#ceZhanShiKuangCon').show();
             $('#ceZhanShiKuangCon .popopTab').hide();
@@ -222,7 +222,7 @@ define(['lib/echarts', 'Controller/DataFormat', 'Controller/closeAll','Function/
                     var wd = json[keyAr[i]]['WD'];
                     var rn = format.rn(json[keyAr[i]]['RAIN1']);
                     var rn1 = rn == '0.0 mm' ? '无降水' : rn;
-  
+
                     var live_list = '<li><span class="el_name">气&nbsp;&nbsp;&nbsp;温 :&nbsp;&nbsp;</span><span class="ele">'+format.tt(json[keyAr[i]]['TAVG'])+'</span></li>'+
                     '<li><span class="el_name">降水量 :&nbsp;&nbsp;</span><span class="ele">'+rn1+'</span></li>'+
                     '<li><span class="el_name">相对湿度 :&nbsp;&nbsp;</span><span class="ele">'+format.rh(json[keyAr[i]]['RH'])+'</span></li>'+   
@@ -236,19 +236,19 @@ define(['lib/echarts', 'Controller/DataFormat', 'Controller/closeAll','Function/
                     $('#ceZhanShiKuangCon .con .left img').attr('src',imgSrc);
                     $('#ceZhanShiKuangCon .con .left .describe').html(format.weatherId(Number(json[keyAr[i]]['PHEN'])));
 
-                    ttHtml = '<span>平均:' + format.tt(json[keyAr[i]]['ATAVG']) + ',</span>'+
-                        '<span>最高:' + format.tt(json[keyAr[i]]['MAXT']) + ',</span>'+
-                        '<span>最低:' + format.tt(json[keyAr[i]]['MINT']) + '</span>';
+                    ttHtml = '<span>平均: ' + format.tt(json[keyAr[i]]['ATAVG']) + ',</span>'+
+                        '<span>最高: ' + format.tt(json[keyAr[i]]['MAXT']) + ',</span>'+
+                        '<span>最低: ' + format.tt(json[keyAr[i]]['MINT']) + '</span>';
 
-                    rhHtml = '<span>平均:' + format.rh(json[keyAr[i]]['RHAVG']) + ',</span>'+
-                        '<span>最大:' + format.rh(json[keyAr[i]]['MAXRH']) + '</span>';              
+                    rhHtml = '<span>平均: ' + format.rh(json[keyAr[i]]['RHAVG']) + ',</span>'+
+                        '<span>最大: ' + format.rh(json[keyAr[i]]['MAXRH']) + '</span>';              
 
-                    windHtml = '<span>最大风力:' + json[keyAr[i]]['MAXWIND'] + '级</span>';                   
+                    windHtml = '<span>最大风力: ' + json[keyAr[i]]['MAXWIND'] + '级</span>';                   
 
-                    rnHtml = '<span>3h:' + format.rn(json[keyAr[i]]['RAIN3']) + ',</span>' +
-                    '<span>6h:' + format.rn(json[keyAr[i]]['RAIN6']) + ',</span>' +
-                    '<span>12h:' + format.rn(json[keyAr[i]]['RAIN12']) + ',</span>' +
-                    '<span>24h:' + format.rn(json[keyAr[i]]['RAIN24']) + '</span>' ;                 
+                    rnHtml = '<span>3h: ' + format.rn(json[keyAr[i]]['RAIN3']) + ',</span>' +
+                    '<span>6h: ' + format.rn(json[keyAr[i]]['RAIN6']) + ',</span>' +
+                    '<span>12h: ' + format.rn(json[keyAr[i]]['RAIN12']) + ',</span>' +
+                    '<span>24h: ' + format.rn(json[keyAr[i]]['RAIN24']) + '</span>' ;                 
 
                     return;
                 }
@@ -415,22 +415,22 @@ define(['lib/echarts', 'Controller/DataFormat', 'Controller/closeAll','Function/
                     $('#ceZhanShiKuangCon .con .left img').attr('src',imgSrc); 
                     $('#ceZhanShiKuangCon .con .left .describe').html(format.weatherId(Number(json[keyAr[i]]['phen'])));
 
-                    ttHtml = '<span>平均:' + format.tt(json[keyAr[i]]['atAvg']) + ',</span>'+
-                        '<span>最高:' + format.tt(json[keyAr[i]]['maxt']) + ',</span>'+
-                        '<span>最低:' + format.tt(json[keyAr[i]]['mint']) + '</span>';
+                    ttHtml = '<span>平均: ' + format.tt(json[keyAr[i]]['atAvg']) + ',</span>'+
+                        '<span>最高: ' + format.tt(json[keyAr[i]]['maxt']) + ',</span>'+
+                        '<span>最低: ' + format.tt(json[keyAr[i]]['mint']) + '</span>';
 
-                    rhHtml = '<span>平均:' + format.rh(json[keyAr[i]]['crhAvg']) + ',</span>'+
-                        '<span>最大:' + format.rh(json[keyAr[i]]['maxCrh']) + '</span>';   
+                    rhHtml = '<span>平均: ' + format.rh(json[keyAr[i]]['crhAvg']) + ',</span>'+
+                        '<span>最大: ' + format.rh(json[keyAr[i]]['maxCrh']) + '</span>';   
                         
-                    srhHtml = '<span>平均:' + format.rh(json[keyAr[i]]['srhAvg']) + ',</span>'+
-                        '<span>最大:' + format.rh(json[keyAr[i]]['maxSrh']) + '</span>'; 
+                    srhHtml = '<span>平均: ' + format.rh(json[keyAr[i]]['srhAvg']) + ',</span>'+
+                        '<span>最大: ' + format.rh(json[keyAr[i]]['maxSrh']) + '</span>'; 
 
-                    windHtml = '<span>最大风速:' + json[keyAr[i]]['maxWs10m'] + 'm/s</span>';                   
+                    windHtml = '<span>最大风速: ' + json[keyAr[i]]['maxWs10m'] + 'm/s</span>';                   
 
-                    rnHtml = '<span>3h:' + format.rn(json[keyAr[i]]['rain3']) + ',</span>' +
-                    '<span>6h:' + format.rn(json[keyAr[i]]['rain6']) + ',</span>' +
-                    '<span>12h:' + format.rn(json[keyAr[i]]['rain12']) + ',</span>' +
-                    '<span>24h:' + format.rn(json[keyAr[i]]['rain24']) + '</span>' ;  
+                    rnHtml = '<span>3h: ' + format.rn(json[keyAr[i]]['rain3']) + ',</span>' +
+                    '<span>6h: ' + format.rn(json[keyAr[i]]['rain6']) + ',</span>' +
+                    '<span>12h: ' + format.rn(json[keyAr[i]]['rain12']) + ',</span>' +
+                    '<span>24h: ' + format.rn(json[keyAr[i]]['rain24']) + '</span>' ;  
 
                     return;
                 }
@@ -685,7 +685,7 @@ define(['lib/echarts', 'Controller/DataFormat', 'Controller/closeAll','Function/
                                     height: arrowSize / 1.5
                                 },
                                 // rotation: (90-api.value(2))*Math.PI/180,
-                                rotation: api.value(2)+180,
+                                rotation: api.value(2)-180,
                                 position: point,
                                 style: api.style({
                                     stroke: color,
@@ -917,14 +917,29 @@ define(['lib/echarts', 'Controller/DataFormat', 'Controller/closeAll','Function/
                 lat: json[key]['LAT'],
                 station_code: json[key]['STATION_METEO']
             };
-            var imgSrc = key.length == 9 ? 'dian07' : 'dian01';
-            var size = key.length == 9 ? '1.5' : '1';
+            // var imgSrc = key.length == 9 ? 'dian07' : 'dian01';
+            var size = key.length == 9 ? '0.3' : '0.2';
+            var offset_y =  key.length == 9 ? -15 : -15;
             marker.setStyle(new ol.style.Style({
                 image: new ol.style.Icon(/** @type {olx.style.IconOptions} */({
                     crossOrigin: 'anonymous',
-                    src: './img/'+imgSrc+'.jpg',
+                    src: './img/dotBlack.png',
                     scale: size,
-                })),                                          
+                })),    
+                text: new ol.style.Text({ 
+                    textAlign: "center",
+                    textBaseline: "middle",
+                    font: '16px bold Arial',                                 
+                    text: json[key]['NAME'], 
+                    fill: new ol.style.Fill({    //文字填充色
+                        color: 'black'
+                    }), 
+                    // stroke: new ol.style.Stroke({    //文字边界宽度与颜色
+                    //     color: 'black',
+                    //     width: 0.5
+                    // }),
+                    offsetY: offset_y,                      
+                })                                         
             }));
 
             markers.push(marker);
@@ -964,9 +979,23 @@ define(['lib/echarts', 'Controller/DataFormat', 'Controller/closeAll','Function/
             marker.setStyle(new ol.style.Style({
                 image: new ol.style.Icon(/** @type {olx.style.IconOptions} */({
                     crossOrigin: 'anonymous',
-                    src: './img/dian09.jpg',
-                    scale: 1,
-                })),                                          
+                    src: './img/dotBlue.png',
+                    scale: 0.2,
+                })),    
+                text: new ol.style.Text({ 
+                    textAlign: "center",
+                    textBaseline: "middle",
+                    font: '16px bold Arial',                            
+                    text: data[i]['name'], 
+                    fill: new ol.style.Fill({    //文字填充色
+                        color: 'black'
+                    }), 
+                    // stroke: new ol.style.Stroke({    //文字边界宽度与颜色
+                    //     color: 'black',
+                    //     width: 0.5
+                    // }),
+                    offsetY: -5,                      
+                })                                       
             }));
 
             markers.push(marker);

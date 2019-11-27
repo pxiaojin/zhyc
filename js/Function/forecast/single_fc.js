@@ -7,9 +7,9 @@ define(['Function/forecast/fcEchart', 'Controller/DataFormat', 'Controller/close
     function init(){
         type = 'fc_point';
         //------------鼠标指向marker的监听      
-        XHW.C.mouse.addCallback(type, function(value){
-            return getPopupHtml(value);
-        });
+        // XHW.C.mouse.addCallback(type, function(value){
+        //     return getPopupHtml(value);
+        // });
         XHW.C.mapclick.addCallback(type, function(value){
             $('#danZhanTianQiYuBaoCon').show();
             showEchart.showFc(value);
@@ -90,15 +90,30 @@ define(['Function/forecast/fcEchart', 'Controller/DataFormat', 'Controller/close
                 lat: json[key]['LAT'],
                 station_code: json[key]['STATION_METEO']
             };
-            var imgSrc = key.length == 9 ? 'dian07' : 'dian01';
-            var size = key.length == 9 ? '1.5' : '1';
-            marker.setStyle(new ol.style.Style({
-                image: new ol.style.Icon(/** @type {olx.style.IconOptions} */({
-                    crossOrigin: 'anonymous',
-                    src: './img/'+imgSrc+'.jpg',
-                    scale: size,
-                })),                                          
-            }));
+             // var imgSrc = key.length == 9 ? 'dian07' : 'dian01';
+             var size = key.length == 9 ? '0.3' : '0.2';
+             var offset_y =  key.length == 9 ? -15 : -15;
+             marker.setStyle(new ol.style.Style({
+                 image: new ol.style.Icon(/** @type {olx.style.IconOptions} */({
+                     crossOrigin: 'anonymous',
+                     src: './img/dotBlack.png',
+                     scale: size,
+                 })),    
+                 text: new ol.style.Text({ 
+                     textAlign: "center",
+                     textBaseline: "middle",
+                     font: '16px bold Arial',                                 
+                     text: json[key]['NAME'], 
+                     fill: new ol.style.Fill({    //文字填充色
+                         color: 'black'
+                     }), 
+                    //  stroke: new ol.style.Stroke({    //文字边界宽度与颜色
+                    //      color: 'black',
+                    //      width: 0.5
+                    //  }),
+                     offsetY: offset_y,                      
+                 })                                         
+             }));
 
             markers.push(marker);
         }

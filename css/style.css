@@ -25,13 +25,12 @@
     color:#ffffff;
     /* margin: 0 5px; */
 }
-#floatMapDiv .floatMapDivTime,#floatMapDiv1 .floatMapDivTime,#floatMapDiv2 .floatMapDivTime,
-#floatMapDiv3 .floatMapDivTime{
+#floatMapDiv .floatMapDivTime,#floatMapDiv3 .floatMapDivTime,#floatMapDiv4 .floatMapDivTime{
     margin-left:5px;
-    color: orange;
 }
-#floatMapDiv4 .floatMapDivTime {
-    color: #fff;
+#floatMapDiv1 .floatMapDivTime,#floatMapDiv2 .floatMapDivTime{
+    color: orange;
+    margin-left: 5px;
 }
 #floatMapDiv .floatMapDivEle,#floatMapDiv1 .floatMapDivEle,#floatMapDiv2 .floatMapDivEle,
 #floatMapDiv3 .floatMapDivEle,#floatMapDiv4 .floatMapDivEle,#floatMapDiv5 .floatMapDivEle{
