@@ -1,0 +1,97 @@
+
+*{
+    box-sizing: border-box;
+}
+/*--产量质量预测-产量预测  */
+
+#yieldForecastCon{
+    /*display:none;*/
+    width: 400px;
+    position: absolute;
+    left:480px;
+    top:150px;
+    z-index: 3;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 0 4px #868686;
+    -moz-box-shadow:0 0 4px #868686;
+    -o-box-shadow: 0 0 4px #868686;
+    -ms-box-shadow: 0 0 4px #868686;
+    box-shadow: 0 0 4px #868686;
+}
+
+#yieldForecastCon .popopDel{
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+}
+#yieldForecastCon .popopDel:hover{
+    color:red;
+    text-decoration: none;
+}
+#yieldForecastCon .top{
+    height: 32px;
+    line-height: 27px;
+    background:#0065a5;
+}
+#yieldForecastCon .top .title{
+    display:inline-block;
+    font-size:18px;
+    margin: 1px 0 0 10px;
+    color:#ffffff;
+    vertical-align: middle;
+}
+#yieldForecastCon .top span{
+    display:inline-block;
+    color:#fff;
+    font-size: 13px;
+}
+
+#yieldForecastCon .top .text{
+    margin-left:5px;
+}
+
+#yieldForecastCon .con{
+    overflow: hidden;
+}
+
+#yieldForecastCon ul li{
+    float: left;
+    width: 33%;
+    height: 60px;
+    position: relative;
+    padding-left: 20px;
+}
+#yieldForecastCon ul li img{
+    position: absolute;
+    left: 13px;
+    top: 20px;
+}
+#yieldForecastCon ul li .eleSpan{
+    position: absolute;
+    left: 18px;
+    top: 55px;
+    font-size: 14px;
+    color: #0065a5;
+}
+#yieldForecastCon ul .suitabilitySpan{
+    font-size: 16px;
+    color: #0065a5;
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+}
+#yieldForecastCon ul .reasonSpan{
+    display: block;
+    text-align: center;
+}
+#yieldForecastCon ul{
+    background-color: #eeeeef;
+    margin:5px;
+}

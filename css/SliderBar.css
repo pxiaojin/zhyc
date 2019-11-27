@@ -1,0 +1,179 @@
+.slibarDiv{
+    display: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0px;
+	height: 50px;
+	z-index: 4;
+}
+.slibarTop{
+	position: fixed;
+    left: 390px;
+    width: 77%;
+    height: 10px;
+    bottom: 30px;
+}
+.slibarT{
+	position: absolute;
+    width: 100%;
+    top: 5px;
+    height: 6px;
+    background: rgba(0,0,0,.5);
+	border-radius: 10px;
+}
+#slider{
+	position: absolute;
+    top:0;
+    width: 16px;
+    height: 16px;
+    background: url(../img/icon14.png) no-repeat;
+}
+#bar{
+	position: fixed;
+	left:390px;
+	width: 77%;
+	height: 40px;
+    bottom: 5px;
+    z-index: 5;
+}
+#scale{
+	position: fixed;
+    width: 77%;
+    height: 25px;
+    bottom: 5px;
+    left: 390px;
+}
+#timeInput{
+	position: fixed;
+    bottom: 10px;
+    left: 133px;
+    padding: 3px 40px 3px 15px;
+    border-radius: 25px;
+    box-shadow: 0 0 7px #6b6b6b;
+    font-size: 14px;
+    color: #3782cd;
+    font-weight: bold;
+    cursor: pointer;
+	background:#fff url(../img/icon15.png) 110px center no-repeat;
+}
+.slibarPlayBtn{
+	position: fixed;
+    left: 40px;
+    bottom: -27px;
+    width: 50px;
+    height: 64px;   
+    background: url(../img/icon6.png) center top no-repeat;
+    background-size: 63%;
+}
+
+.slibarPlayBtn span,.slibarUpBtn span,.slibarDownBtn span{
+	position: absolute;
+    bottom: 0;
+    left: 12px;
+    font-size: 14px;
+    color: #fff;
+	font-weight: bold;
+	text-shadow: 1px 1px 3px #000;
+}
+.slibarUpBtn{
+	position: fixed;
+    left: 0;
+    bottom: -27px;
+    width: 50px;
+    height: 64px;   
+    background: url(../img/icon7.png) center top no-repeat;
+    background-size: 63%;
+}
+.slibarDownBtn{
+	position: fixed;
+    left: 80px;
+    bottom: -27px;
+    width: 50px;
+    height: 64px;   
+    background: url(../img/icon8.png) center top no-repeat;
+    background-size: 63%;
+}
+
+.slibarPlayBtn.current{
+    background-image: url(../img/icon5.png);
+}
+
+/*#bar.current,#slibarTop.current,#scale.current{
+    left:22.5%;
+    width:75%;
+}*/
+
+/*未来7天*/
+#futureSevenDay{
+    display:none;
+    position: absolute;
+    top: -24px;
+    left: 300px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 1px 8px;
+}
+#futureSevenDay:after{
+    content: '';
+    position: absolute;
+    left: 14px;
+    bottom: -16px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    border-width: 8px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.5) transparent transparent transparent;
+}
+#futureSevenDay a{
+    display: inline-block;
+    font-size: 12px;
+    margin: 0 1px;
+    color: #ffffff;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+}
+#futureSevenDay a.current{
+    background-color: #ff9600;
+    border-radius: 50%;
+}
+#futureSevenDay a:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+
+/*箭头在右侧显示*/
+#futureSevenDay.current:after{
+    left:217px;
+}
+
+/*时间步长*/
+#timeBuChange{
+    position: fixed;
+    bottom: 10px;
+    left: 276px;
+    padding: 3px 12px 3px 15px;
+    border-radius: 25px;
+    box-shadow: 0 0 7px #6b6b6b;
+    font-size: 14px;
+    color: #3782cd;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #ffffff;
+    /*background:#fff url(../img/icon15.png) 75px center no-repeat;*/
+}
+#timeBuChange .timeBuChangeSpan{
+    color:#333333;
+}
+#timeBuChange select{
+    border: 0 none;
+    color: #333333;
+    outline: none;
+}
+

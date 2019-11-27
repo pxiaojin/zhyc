@@ -1,0 +1,603 @@
+/* ------------------------------------左侧要素  19-02-12---------------------------- */
+.leftMain{
+    position: absolute;
+    left:0;
+    top:100px;
+    z-index:3;
+    /*max-height: 500px;
+    overflow:auto;*/
+    display:none;
+}
+.leftMain .mainBtn{
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    padding: 2px 15px;
+    font-size: 16px;
+    line-height: 25px;
+    margin: 3px 0 0 6px;
+    display: inline-block;
+    position: relative;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -o-border-radius: 15px;
+    -ms-border-radius: 15px;
+    border-radius: 15px;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -o-transition: .2s;
+    -ms-transition: .2s;
+    transition: .2s;
+}
+.leftMain .mainBtn:hover{
+     background: rgba(0,0,0,.7);
+}
+
+.leftMain ul>li{
+    position: relative;
+    margin: 3px 0;
+}
+.leftMain ul>li .rgbaDiv{
+    display:none;
+    position: absolute;
+    left:14px;
+    top:36px;
+    width: 23px;
+    margin-top: 1px;
+    background: rgba(0,0,0,.5);
+    -webkit-border-radius: 15px;
+       -moz-border-radius: 15px;
+         -o-border-radius: 15px;
+        -ms-border-radius: 15px;
+            border-radius: 15px;
+}
+
+.leftMain ul>li .rgbaDivJiChang{
+    height: 96px;
+}
+.leftMain ul>li .rgbaDivMoShi{
+    height: 406px;
+}
+.leftMain ul>li .rgbaDivLeiDa{
+    height: 65px;
+}
+.leftMain ul>li .rgbaDivWeiXing{
+    height: 184px;
+}
+.leftMain ul>li .rgbaDivHaiYang{
+    height: 220px;
+}
+.leftMain ul>li .rgbaDivHangXian{
+    height: 65px;
+}
+
+.leftMain .maxUl>li.current .mainBtn{
+    background-color: #ff9600;
+    -webkit-text-shadow: 1px 1px 3px rgba(0,0,0,.4);
+    -moz-text-shadow: 1px 1px 3px rgba(0,0,0,.4);
+    -o-text-shadow: 1px 1px 3px rgba(0,0,0,.4);
+    -ms-text-shadow: 1px 1px 3px rgba(0,0,0,.4);
+    text-shadow: 1px 1px 3px rgba(0,0,0,.4);
+    -webkit-box-shadow: 0 1.5px 3px rgba(0,0,0,.25);
+    -moz-box-shadow: 0 1.5px 3px rgba(0,0,0,.25);
+    -o-box-shadow: 0 1.5px 3px rgba(0,0,0,.25);
+    -ms-box-shadow: 0 1.5px 3px rgba(0,0,0,.25);
+    box-shadow: 0 1.5px 3px rgba(0,0,0,.25);
+}
+.leftMain .maxUl>li.current2 .rgbaDiv,.leftMain .maxUl>li.current2 .erJiUl{
+    display:block;
+}
+
+
+.leftMain ul .erJiUl{
+    display:none;
+    padding-left:26px;
+}
+.leftMain ul .erJiUl .erJiBtn{
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    padding: 0 12px;
+    font-size: 13px;
+    line-height: 25px;
+    margin: 3px 0 0 13px;
+    display: inline-block;
+    -webkit-border-radius: 15px;
+       -moz-border-radius: 15px;
+         -o-border-radius: 15px;
+        -ms-border-radius: 15px;
+            border-radius: 15px;
+    -webkit-transition: .2s; 
+       -moz-transition: .2s; 
+         -o-transition: .2s; 
+        -ms-transition: .2s; 
+            transition: .2s;
+}
+.leftMain ul .erJiUl li img {
+    position: absolute;
+    left: -12px;
+    top: 4px;
+}
+.leftMain ul .erJiUl .erJiBtn:hover{
+    background: rgba(0,0,0,.7);
+}
+.leftMain ul .erJiUl>li.currenterJiBtn .erJiBtn{
+    background: #d49500;
+}
+.leftMain ul .erJiUl>li.currenterJiBtn .sanJiDiv {
+    display:inline-block;
+}
+.leftMain ul .erJiUl .erJiSpan{
+    position: absolute;
+    right:3px;
+    top:9px;
+    display:inline-block;
+    width: 6px;
+    height: 7px;
+    background:url(../img/icon_arrowrr.png) no-repeat;
+}
+
+.leftMain ul .sanJiDiv{
+    position: absolute;
+    right:-62px;
+    top:5px;
+    display:none;
+    padding:5px;
+    cursor:pointer;
+    background: rgba(0,0,0,.5);
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+         -o-border-radius: 5px;
+        -ms-border-radius: 5px;
+            border-radius: 5px;
+}
+.leftMain ul .sanJiDiv span{
+    font-size: 12px;
+    display:block;
+    color:#fff;
+}
+.leftMain ul .sanJiDiv span:hover{
+    color:#d1f1c9;
+}
+.leftMain ul .sanJiDiv span.current{
+    color:#2ad400;
+}
+
+/*左侧三级航空剖面*/
+.leftMain ul .sanJiPouMianDiv{
+    width: 370px;
+    position: absolute;
+    right: -400px;
+    bottom: 0;
+    display: none;
+    padding: 0 7px 0 10px;
+    background: rgba(0,0,0,.5);
+    color:#fff;
+    font-size:14px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+}
+.leftMain ul .sanJiPouMianDiv .yiHangP{
+    margin: 3px 0;
+}
+.leftMain ul .sanJiPouMianDiv span,.leftMain ul .sanJiPouMianDiv input{
+    font-size:14px;
+    color:#fff;
+    vertical-align: middle;
+    display:inline-block;
+}
+.leftMain ul .sanJiPouMianDiv span.spanL{
+    padding-left:8px;
+}
+
+.leftMain ul .sanJiPouMianDiv input{
+    width:120px;
+    height: 24px;
+    display:inline-block;
+    vertical-align: middle;
+    margin:0 5px;
+    font-size: 12px;
+    padding: 0 3px;
+    border: 1px solid #2d2d2d;
+    outline:none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none; 
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#000000), to(#797878));   
+    background: -webkit-linear-gradient(top, #000000, #797878);   
+    background: -moz-linear-gradient(top, #000000, #797878);   
+    background: -o-linear-gradient(top, #000000, #797878);   
+    background: -ms-linear-gradient(top, #000000, #797878);   
+    background: linear-gradient(top, #000000, #797878);   
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0, startColorstr = #000000, endColorstr = #797878);
+}
+.leftMain ul .sanJiPouMianDiv span.spanRBianJi{
+    margin:0 3px;
+    display:inline-block;
+    width: 15px;
+    height: 15px;
+    background:url(../img/icon_bianji.png) no-repeat;
+    cursor:pointer;
+}
+.leftMain ul .sanJiPouMianDiv span.spanRDel{
+    margin:0 3px;
+    display:inline-block;
+    width: 15px;
+    height: 15px;
+    background:url(../img/icon_del.png) no-repeat;
+    cursor:pointer;
+}
+.leftMain ul .sanJiPouMianDiv span.spanRAdd{
+    margin:0 3px;
+    display:inline-block;
+    width: 15px;
+    height: 15px;
+    background:url(../img/icon_add.png) no-repeat;
+    cursor:pointer;
+}
+.leftMain ul .sanJiPouMianDiv .annuiDiv{
+    width: 180px;
+    margin: 10px auto 15px auto;
+}
+.leftMain ul .sanJiPouMianDiv .annuiDiv a{
+    padding: 3px 20px 6px 20px;
+    margin: 0 10px;
+    font-size: 14px;
+    color:#fff;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -o-border-radius: 15px;
+    -ms-border-radius: 15px;
+    border-radius: 15px;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#797878), to(#000000));   
+    background: -webkit-linear-gradient(top, #797878, #000000);   
+    background: -moz-linear-gradient(top, #797878, #000000);   
+    background: -o-linear-gradient(top, #797878, #000000);   
+    background: -ms-linear-gradient(top, #797878, #000000);   
+    background: linear-gradient(top, #797878, #000000);   
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0, startColorstr = #797878, endColorstr = #000000);
+}
+.leftMain ul .sanJiPouMianDiv .zengJiaHangDiv{
+    max-height:115px;
+    margin-top: 10px;
+    overflow:auto;
+}
+.leftMain ul .erJiUl>li.currenterJiBtn .sanJiPouMianDiv{
+    display:block;
+}
+.leftMain .mCSB_scrollTools .mCSB_draggerContainer{
+    left:0;
+}
+.leftMain .mCSB_scrollTools{
+    left:0;
+}
+.leftMain .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: rgba(70, 70, 70, 0.75);
+}
+
+.leftMain .mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar, .mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar {
+    background-color: rgba(70, 70, 70, 0.75);
+}
+
+.leftMain .arrowrrImg{
+    position: absolute;
+    right: 6px;
+    top: 12px;
+}
+
+/*左侧要素 位置*/
+.leftMain-tlm-three2{
+    position:fixed;
+    bottom:240px;
+}
+.leftMain-tlm-three1{
+    position:fixed;
+    bottom:100px;
+}
+.leftMainTop{
+    bottom:240px;
+}
+
+/*左侧三级航空剖面*/
+.leftMain ul .sanJiPouMianDiv{
+    width: 328px;
+    position: absolute;
+    left: 126px;
+    bottom: 20px;
+    display: none;
+    padding: 0 7px 0 10px;
+    background: rgba(0,0,0,.5);
+    color:#fff;
+    font-size:14px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+}
+.leftMain ul .sanJiPouMianDiv .yiHangP{
+    margin: 3px 0;
+}
+.leftMain ul .sanJiPouMianDiv span,.leftMain ul .sanJiPouMianDiv input{
+    font-size:14px;
+    color:#fff;
+    vertical-align: middle;
+    display:inline-block;
+}
+.leftMain ul .sanJiPouMianDiv span.spanL{
+    padding-left:8px;
+}
+
+.leftMain ul .sanJiPouMianDiv input{
+    width:120px;
+    height: 24px;
+    display:inline-block;
+    vertical-align: middle;
+    margin:0 5px;
+    font-size: 12px;
+    padding: 0 3px;
+    border: 1px solid #2d2d2d;
+    outline:none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none; 
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#000000), to(#797878));   
+    background: -webkit-linear-gradient(top, #000000, #797878);   
+    background: -moz-linear-gradient(top, #000000, #797878);   
+    background: -o-linear-gradient(top, #000000, #797878);   
+    background: -ms-linear-gradient(top, #000000, #797878);   
+    background: linear-gradient(top, #000000, #797878);   
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0, startColorstr = #000000, endColorstr = #797878);
+}
+.leftMain ul .sanJiPouMianDiv span.spanRBianJi{
+    margin:0 3px;
+    display:inline-block;
+    width: 15px;
+    height: 15px;
+    /* background:url(../img/icon_bianji.png) no-repeat; */
+    cursor:pointer;
+}
+.leftMain ul .sanJiPouMianDiv span.spanRDel{
+    margin:0 3px;
+    display:inline-block;
+    width: 15px;
+    height: 15px;
+    background:url(../img/layout/icon_multi_del.png) no-repeat;
+    cursor:pointer;
+}
+.leftMain ul .sanJiPouMianDiv span.spanRAdd{
+    margin:0 3px;
+    display:inline-block;
+    width: 15px;
+    height: 15px;
+    /* background:url(../img/icon_add.png) no-repeat; */
+    cursor:pointer;
+}
+.leftMain ul .sanJiPouMianDiv .annuiDiv{
+    width: 181px;
+    margin: 10px auto 15px auto;
+}
+.leftMain ul .sanJiPouMianDiv .annuiDiv a , #moveBar a {
+    padding: 3px 20px 6px 20px;
+    margin: 0 10px;
+    font-size: 14px;
+    color:#fff;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -o-border-radius: 15px;
+    -ms-border-radius: 15px;
+    border-radius: 15px;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#797878), to(#000000));   
+    background: -webkit-linear-gradient(top, #797878, #000000);   
+    background: -moz-linear-gradient(top, #797878, #000000);   
+    background: -o-linear-gradient(top, #797878, #000000);   
+    background: -ms-linear-gradient(top, #797878, #000000);   
+    background: linear-gradient(top, #797878, #000000);   
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0, startColorstr = #797878, endColorstr = #000000);
+}
+.leftMain ul .sanJiPouMianDiv .zengJiaHangDiv{
+    max-height:115px;
+    margin-top: 10px;
+    overflow:auto;
+}
+.leftMain ul .erJiUl>li.currenterJiBtn .sanJiPouMianDiv{
+    display:block;
+}
+/*机场二级*/
+.leftMain .jichangErJiD{
+    display:none;
+    margin: 5px 0 0 5px;
+}
+.leftMain ul>li.current .jichangErJiD{
+    display:block;
+}
+
+/*左侧机场二级调整*/
+#jiChangSelectDiv{
+    position: absolute;
+    left:75px;
+    top:3px;
+    width:50px;
+}
+#leftMain .mCustomScrollBox{
+    overflow-x:auto;
+    overflow-y:hidden;
+}
+#leftMain .mCSB_container{
+    width:230px;
+}
+#leftMain .mCSB_container{
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
+
+#leftMain .erJiUl li.moShiTabLi{
+    left:-20px;
+    background: rgba(0,0,0,.5);
+    font-size: 12px;
+    margin: 3px 0 0 0;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -o-border-radius: 15px;
+    -ms-border-radius: 15px;
+    border-radius: 15px;
+    position: absolute;
+    left: 15px;
+    top: 33px;
+}
+#leftMain .erJiUl .moShiTabLi span{
+    display: inline-block;
+    width: 60px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -o-border-radius: 15px;
+    -ms-border-radius: 15px;
+    border-radius: 15px;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -o-transition: .2s;
+    -ms-transition: .2s;
+    transition: .2s;
+}
+#leftMain .erJiUl .moShiTabLi span.current{
+    background:#cc7800;
+    box-shadow: 0 0 4px 0 black;
+}
+
+#leftMain .mCSB_scrollTools{
+    width:4px;
+}
+
+#leftMain .erJiUl>li{
+    position:relative;
+    width:220px;
+}
+
+.leftMain .sanJiUl,#weather_warning_select{
+    background: rgba(0,0,0,.5);
+    position: absolute;
+    /* left: 100px; */
+    top:0;
+    display: none;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -o-transition: .2s;
+    -ms-transition: .2s;
+    transition: .2s;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -o-border-radius: 15px;
+    -ms-border-radius: 15px;
+    border-radius: 6px;
+    float: right;
+    margin-top: 4px;
+    margin-left: 2px;
+    z-index: 999999999;
+}
+#leftMain .sanJiUl p,#weather_warning_select p{
+    height: 20px;
+    line-height: 20px;
+    padding: 0 5px;
+    margin: 5px 0;
+    font-size: 12px;
+    color:#ffffff;
+    cursor:pointer;
+}
+#leftMain .sanJiUl p.currentBlue,#weather_warning_select p.currentBlue{
+    background-color: #191919;
+}
+#leftMain .sanJiUl p:hover{
+    background-color:#191919;
+}
+#leftMain .erJiUl{
+    position:relative;
+}
+
+#leftMain .sanJiShiKuangZongHeTu{
+    /* left:123px; */
+    top:0;
+}
+#leftMain .sanJiYuBaoZongHeTu{
+    left:123px;
+    top:0;
+}
+#leftMain .sanJiQiWen{
+    /* left:87px; */
+    /* top:31px; */
+}
+#leftMain .sanJiShiDu{
+    left:87px;
+    top:61px;
+}
+#leftMain .sanJiFengChang{
+    left:87px;
+    top:91px;
+}
+#leftMain .sanJiWeiShiGaoDu{
+    left:111px;
+    top:155px;
+}
+#leftMain .sanJiJiangShui{
+    left:88px;
+    top:216px;
+}
+#leftMain .sanJiYun{
+    left:76px;
+    top:247px;
+}
+#leftMain .sanJiJiBing{
+    left:88px;
+    top:277px;
+}
+#leftMain .sanDianBo{
+    left:88px;
+    top:309px;
+}
+#leftMain .sanJiDuiLuiZhiShu{
+    left:148px;
+    top:371px;
+}
+#leftMain .sanJiKuiHuaBa{
+    /* left:106px; */
+    /* top:93px; */
+}
+#leftMain .sanJiHaiWen{
+    left:88px;
+    top:0;
+}
+#leftMain .sanJiHaiLui{
+    left:88px;
+    top:31px;
+}
+
+
+
+
+/*重新分类修改*/
+.leftMain ul>li .rgbaDivXinFenLei{
+    top: 1px;
+}
+/*滚动条*/
+#leftMain .MainElement{
+    overflow:hidden;
+}

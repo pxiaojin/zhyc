@@ -1,0 +1,95 @@
+
+*{
+    box-sizing: border-box;
+}
+/*--生长环境监测-适宜度评价弹出框  */
+
+#farmingActivityCon{
+    display:none;
+    width: 450px;
+    position: absolute;
+    left:480px;
+    top:150px;
+    z-index: 3;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 0 4px #868686;
+    -moz-box-shadow:0 0 4px #868686;
+    -o-box-shadow: 0 0 4px #868686;
+    -ms-box-shadow: 0 0 4px #868686;
+    box-shadow: 0 0 4px #868686;
+}
+
+#farmingActivityCon .popopDel{
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+}
+#farmingActivityCon .popopDel:hover{
+    color:red;
+    text-decoration: none;
+}
+#farmingActivityCon .top{
+    height: 32px;
+    line-height: 27px;
+    background:#0065a5;
+}
+#farmingActivityCon .top .title{
+    display:inline-block;
+    font-size:18px;
+    margin: 1px 0 0 10px;
+    color:#ffffff;
+    vertical-align: middle;
+}
+#farmingActivityCon .top span{
+    display:inline-block;
+    color:#fff;
+    font-size: 13px;
+}
+
+#farmingActivityCon .top .text{
+    margin-left:5px;
+}
+
+#farmingActivityCon .con{
+    overflow: hidden;
+}
+
+#farmingActivityCon .farmingActivityUl li{
+    background-color:#d2e2f2;
+    float: left;
+    margin:5px;
+    width: 31%;
+    height: 95px;
+    position: relative;
+}
+#farmingActivityCon .farmingActivityUl li img{
+    position: absolute;
+    left:10px;
+    top:10px;
+}
+#farmingActivityCon .farmingActivityUl li .eleSpan{
+    position: absolute;
+    left: 18px;
+    top: 55px;
+    font-size: 14px;
+    color: #0065a5;
+}
+#farmingActivityCon .farmingActivityUl li .suitabilitySpan{
+    position: absolute;
+    left: 65px;
+    top: 15px;
+    font-size: 16px;
+    color: #0065a5;
+}
+#farmingActivityCon .farmingActivityUl li .reasonSpan{
+    position: absolute;
+    left: 65px;
+    top: 56px;
+}

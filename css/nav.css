@@ -1,0 +1,152 @@
+
+.navOne{
+    position: absolute;
+    top:60px;
+    overflow:hidden;
+}
+
+.navOne ul li{
+    float:left;
+}
+.navOne ul li a{
+    display:block;
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    padding: 4px 15px;
+    font-size: 19px;
+    line-height: 25px;
+    margin: 3px 0 0 6px;
+    display: inline-block;
+    position: relative;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -o-border-radius: 15px;
+    -ms-border-radius: 15px;
+    border-radius: 15px;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -o-transition: .2s;
+    -ms-transition: .2s;
+    transition: .2s;
+}
+.navOne ul li a:hover{
+    background: rgba(0,0,0,.7);
+}
+.navOne ul li.navOneCurrent a{
+    background-color: #f78414;
+    -webkit-text-shadow: 1px 1px 3px rgba(0,0,0,.4);
+    -moz-text-shadow: 1px 1px 3px rgba(0,0,0,.4);
+    -o-text-shadow: 1px 1px 3px rgba(0,0,0,.4);
+    -ms-text-shadow: 1px 1px 3px rgba(0,0,0,.4);
+    text-shadow: 1px 1px 3px rgba(0,0,0,.4);
+    -webkit-box-shadow: 0 1.5px 3px rgba(0,0,0,.25);
+    -moz-box-shadow: 0 1.5px 3px rgba(0,0,0,.25);
+    -o-box-shadow: 0 1.5px 3px rgba(0,0,0,.25);
+    -ms-box-shadow: 0 1.5px 3px rgba(0,0,0,.25);
+    box-shadow: 0 1.5px 3px rgba(0,0,0,.25);
+}
+
+.leftMain i{
+    position:absolute;
+    left:-14px;
+    top:2px;
+    width:23px;
+    height:23px;
+
+}
+
+/*气温*/
+.leftMain i.qiwenI{
+    background:url(../img/layout/icon_qiwen.png) no-repeat;
+}
+.leftMain .erJiUl .currenterJiBtn .qiwenI{
+    background:url(../img/layout/icon_qiwen2.png) no-repeat;
+    background-position: center;
+    background-size: 99.9%;
+    left: -12px;
+    top: 3px;
+}
+
+/*降水量*/
+.leftMain i.jiangShuiLiangI{
+    background:url(../img/layout/icon_jiangshui.png) no-repeat;
+}
+.leftMain .erJiUl .currenterJiBtn .jiangShuiLiangI{
+    background:url(../img/layout/icon_jiangshui2.png) no-repeat;
+    background-position: center;
+    background-size: 99.9%;
+    left: -12px;
+    top: 3px;
+}
+
+/*风力风向*/
+.leftMain i.fengLiFengXingI{
+    background:url(../img/layout/icon_feng.png) no-repeat;
+}
+.leftMain .erJiUl .currenterJiBtn .fengLiFengXingI{
+    background:url(../img/layout/icon_feng2.png) no-repeat;
+    background-position: center;
+    background-size: 99.9%;
+    left: -12px;
+    top: 3px;
+}
+
+/*湿度*/
+.leftMain i.shiDuI{
+    background:url(../img/layout/icon_shidu.png) no-repeat;
+}
+.leftMain .erJiUl .currenterJiBtn .shiDuI{
+    background:url(../img/layout/icon_shidu2.png) no-repeat;
+    background-position: center;
+    background-size: 99.9%;
+    left: -12px;
+    top: 3px;
+}
+
+/*数据*/
+.leftMain i.shuJuI{
+    background:url(../img/layout/icon_shuju.png) no-repeat;
+}
+.leftMain .erJiUl .currenterJiBtn .shuJuI{
+    background:url(../img/layout/icon_shuju2.png) no-repeat;
+    background-position: center;
+    background-size: 99.9%;
+    left: -12px;
+    top: 3px;
+}
+
+/*种植面积*/
+.leftMain i.mianJiI{
+    background:url(../img/layout/icon_mianji.png) no-repeat;
+}
+.leftMain .erJiUl .currenterJiBtn .mianJiI{
+    background:url(../img/layout/icon_mianji2.png) no-repeat;
+    background-position: center;
+    background-size: 99.9%;
+    left: -12px;
+    top: 3px;
+}
+
+/*分布图*/
+.leftMain i.fenBuTuI{
+    background:url(../img/layout/icon_fenbutu.png) no-repeat;
+}
+.leftMain .erJiUl .currenterJiBtn .fenBuTuI{
+    background:url(../img/layout/icon_fenbutu2.png) no-repeat;
+    background-position: center;
+    background-size: 99.9%;
+    left: -12px;
+    top: 3px;
+}
+
+/*气象常识*/
+.leftMain i.qiXiangChangShiI{
+    background:url(../img/layout/icon_qixingchanshikuang.png) no-repeat;
+}
+.leftMain .erJiUl .currenterJiBtn .qiXiangChangShiI{
+    background:url(../img/layout/icon_qixingchanshikuang2.png) no-repeat;
+    background-position: center;
+    background-size: 99.9%;
+    left: -12px;
+    top: 3px;
+}

@@ -1,0 +1,95 @@
+
+*{
+    box-sizing: border-box;
+}
+/*--生长环境监测-适宜度评价弹出框  */
+
+#suitabilityCon{
+    display:none;
+    width: 390px;
+    position: absolute;
+    left:480px;
+    top:150px;
+    z-index: 3;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 0 4px #868686;
+    -moz-box-shadow:0 0 4px #868686;
+    -o-box-shadow: 0 0 4px #868686;
+    -ms-box-shadow: 0 0 4px #868686;
+    box-shadow: 0 0 4px #868686;
+}
+
+#suitabilityCon .popopDel{
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+}
+#suitabilityCon .popopDel:hover{
+    color:red;
+    text-decoration: none;
+}
+#suitabilityCon .top{
+    height: 32px;
+    line-height: 27px;
+    background:#0065a5;
+}
+#suitabilityCon .top .title{
+    display:inline-block;
+    font-size:18px;
+    margin: 1px 0 0 10px;
+    color:#ffffff;
+    vertical-align: middle;
+}
+#suitabilityCon .top span{
+    display:inline-block;
+    color:#fff;
+    font-size: 13px;
+}
+
+#suitabilityCon .top .text{
+    margin-left:5px;
+}
+
+#suitabilityCon .con{
+    overflow: hidden;
+}
+
+#suitabilityCon .suitabilityConUl li{
+    background-color:#d2e2f2;
+    float: left;
+    margin:5px;
+    width: 47%;
+    height: 95px;
+    position: relative;
+}
+#suitabilityCon .suitabilityConUl li img{
+    position: absolute;
+    left:10px;
+    top:10px;
+}
+#suitabilityCon .suitabilityConUl li .eleSpan{
+    position: absolute;
+    left: 18px;
+    top: 55px;
+    font-size: 14px;
+    color: #0065a5;
+}
+#suitabilityCon .suitabilityConUl li .suitabilitySpan{
+    position: absolute;
+    left: 65px;
+    top: 15px;
+    font-size: 16px;
+    color: #0065a5;
+}
+#suitabilityCon .suitabilityConUl li .reasonSpan{
+    position: absolute;
+    left: 65px;
+    top: 56px;
+}

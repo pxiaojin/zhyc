@@ -1,0 +1,86 @@
+
+*{
+    box-sizing: border-box;
+}
+/*产量质量预测-气候预测  */
+
+#climateForecastCon{
+    /*display:none;*/
+    min-width: 250px;
+    position: absolute;
+    left:480px;
+    top:150px;
+    z-index: 3;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 0 4px #868686;
+    -moz-box-shadow:0 0 4px #868686;
+    -o-box-shadow: 0 0 4px #868686;
+    -ms-box-shadow: 0 0 4px #868686;
+    box-shadow: 0 0 4px #868686;
+}
+
+#climateForecastCon .popopDel{
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+}
+#climateForecastCon .popopDel:hover{
+    color:red;
+    text-decoration: none;
+}
+#climateForecastCon .top{
+    height: 32px;
+    line-height: 27px;
+    background:#0065a5;
+}
+#climateForecastCon .top .title{
+    display:inline-block;
+    font-size:18px;
+    margin: 1px 0 0 10px;
+    color:#ffffff;
+    vertical-align: middle;
+}
+#climateForecastCon .top span{
+    display:inline-block;
+    color:#fff;
+    font-size: 13px;
+}
+#climateForecastCon .top .time{
+    margin-left:20px;
+}
+#climateForecastCon .top .text{
+    margin-left:5px;
+}
+
+#climateForecastCon .con{
+    padding: 15px 5px;
+    overflow: hidden;
+}
+#climateForecastCon .con .right{
+    float:left;
+}
+#climateForecastCon .con .right span{
+    font-size: 13px;
+    color:#333333;
+    display:block;
+    padding-left:108px;
+}
+#climateForecastCon .con .right li{
+    margin:3px 0;
+    float: left;
+    width: 200px;
+    position:relative;
+}
+#climateForecastCon .con .right li.current span{
+    color:#0065a5;
+}
+#climateForecastCon .con .right li img{
+    position:absolute;
+}

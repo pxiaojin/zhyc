@@ -1,0 +1,403 @@
+
+.clearfix:after { content: ""; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix { display: inline-table; }
+*html .clearfix { height: 1%; }
+.clearfix { display: block; }
+*+html .clearfix { min-height: 1%; }
+
+*{
+    box-sizing: border-box;
+}
+/*--测站天气实况弹出框  */
+/*手工分析*/
+#danZhanTianQiYuBaoCon{
+    display:none;
+    position: absolute;
+    left:195px;
+    top:110px;
+    z-index: 3;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 0 4px #868686;
+    -moz-box-shadow:0 0 4px #868686;
+    -o-box-shadow: 0 0 4px #868686;
+    -ms-box-shadow: 0 0 4px #868686;
+    box-shadow: 0 0 4px #868686;
+}
+
+#danZhanTianQiYuBaoCon .popopDel{
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: none;
+}
+#danZhanTianQiYuBaoCon .popopDel:hover{
+    color:red;
+    text-decoration: none;
+}
+#danZhanTianQiYuBaoCon .top{
+    height: 32px;
+    line-height: 27px;
+    background:#0065a5;
+}
+
+#danZhanTianQiYuBaoCon .leftTab{
+    overflow:hidden;
+    float: left;
+    margin-left: 115px;
+}
+#danZhanTianQiYuBaoCon .leftTab span{
+    display: inline-block;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 0 20px;
+    cursor: pointer;
+    height: 32px;
+    line-height: 32px;
+}
+#danZhanTianQiYuBaoCon .leftTab span.orange{
+    background: #f78414;
+}
+#danZhanTianQiYuBaoCon .con{
+    margin:3px;
+    height: 300px;
+    background:url(../img/background/2.jpg) no-repeat;
+}
+#danZhanTianQiYuBaoCon .conLeft,#danZhanTianQiYuBaoCon .conRight{
+    float: left;
+    position:relative;
+}
+#danZhanTianQiYuBaoCon .conLeft span,#danZhanTianQiYuBaoCon .conRight span{
+    color: #ffffff;
+    font-size: 12px;
+}
+#danZhanTianQiYuBaoCon .conLeft{
+    width: 200px;
+    height: 100%;
+}
+
+#danZhanTianQiYuBaoCon .conLeft .shiKuangTime{
+    position: absolute;
+    left: 35px;
+    top: 27px;
+    font-size: 16px;
+}
+#danZhanTianQiYuBaoCon .conLeft .temperature{
+    font-size: 70px;
+    position: absolute;
+    left: 40px;
+    top: 48px;
+}
+#danZhanTianQiYuBaoCon .conLeft .temperature .unit{
+    font-size: 26px;
+    font-style: normal;
+    position: absolute;
+    top: 20px;
+    right: -30px;
+}
+#danZhanTianQiYuBaoCon .conLeft .temperatureHige{
+    position: absolute;
+    left: 40px;
+    top: 155px;
+    padding-left:12px;
+    background:url(../img/layout/arrowt.png) no-repeat left center;
+}
+#danZhanTianQiYuBaoCon .conLeft .temperatureLow{
+    position: absolute;
+    left: 95px;
+    top: 155px;
+    padding-left:12px;
+    background:url(../img/layout/arrowb.png) no-repeat left center;
+}
+
+#danZhanTianQiYuBaoCon .conLeft .airQuality{
+    font-size: 12px;
+    position: absolute;
+    left:35px;
+    top: 180px;
+    background-color: #21ce21;
+    padding: 1px 33px;
+    border-radius: 10px;
+}
+#danZhanTianQiYuBaoCon .conLeft .wind{
+    font-size: 12px;
+    position: absolute;
+    left: 30px;
+    top: 205px;
+    padding-left:30px;
+    background:url(../img/layout/icon_feng.png) no-repeat left center;
+}
+#danZhanTianQiYuBaoCon .conLeft .humidity{
+    font-size: 12px;
+    position: absolute;
+    left:30px;
+    top: 230px;
+    padding-left:30px;
+    background:url(../img/layout/icon_shidu.png) no-repeat left center;
+}
+
+#danZhanTianQiYuBaoCon .conRight{
+    padding: 18px 0 0 0;
+    width: 650px;
+    height: 100%;
+}
+#danZhanTianQiYuBaoCon .conRight .conRightTit{
+    color: #ffffff;
+    font-size: 16px;
+}
+#danZhanTianQiYuBaoCon .conRight .sunset{
+    height:22px;
+    line-height: 22px;
+    position: absolute;
+    right: 170px;
+    top: 25px;
+    padding-left:35px;
+    background:url(../img/layout/icon_sunrise.png) no-repeat left center;
+}
+#danZhanTianQiYuBaoCon .conRight .sunrise{
+    height:22px;
+    line-height: 22px;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    padding-left:30px;
+    background:url(../img/layout/icon_sunset.png) no-repeat left center;
+}
+
+#danZhanTianQiYuBaoCon .conRight .Carousel{
+    overflow:hidden;
+    height: 94%;
+    /*padding-top: 15px;*/
+    position:relative;
+}
+#danZhanTianQiYuBaoCon .conRight .Carousel ul{
+    position: absolute;
+    left: 0;
+}
+#CarouselUl{
+    width: 1300px;
+}
+#danZhanTianQiYuBaoCon .conRight .Carousel ul li{
+    float: left;
+    width:50px;
+    border-right:1px solid rgba(255, 255, 255, 0.3);
+}
+#danZhanTianQiYuBaoCon #seven_day_list{
+    /* width: 1414px;  */
+    position: absolute;
+    left: 0;
+}
+#danZhanTianQiYuBaoCon #seven_day_list li{
+    float: left;
+    width:82px;
+    border-right:1px solid rgba(255, 255, 255, 0.3);
+    height: 214px;
+}
+#danZhanTianQiYuBaoCon .conRight .Carousel ul li.last{
+    border:0;
+}
+#danZhanTianQiYuBaoCon .conRight .Carousel ul li span{
+    display:block;
+    text-align:center;
+}
+#danZhanTianQiYuBaoCon .conRight .curve{
+    height:130px;
+}
+/* 当天天气图标 */
+#danZhanTianQiYuBaoCon #CarouselUl .b img{
+    margin: 10px 0 0 12px;
+}
+/* 七天天气图标 */
+#danZhanTianQiYuBaoCon #seven_day_list .b img{
+    margin: 10px 0 0 25px;
+}
+#danZhanTianQiYuBaoCon .conRight .arrowDiv{
+    position: absolute;
+    top:46%;
+    width:100%;
+    height: 61px;
+}
+#danZhanTianQiYuBaoCon .conRight .arrowDiv span{
+    width:31px;
+    height: 61px;
+    display:block;
+}
+#danZhanTianQiYuBaoCon .conRight .arrowDiv .arrowLeftBtn{
+    background:url(../img/layout/icon_arrowleft.png);
+    float: left;
+    opacity: 0.5;
+    cursor:pointer;
+    display:none;
+}
+#danZhanTianQiYuBaoCon .conRight .arrowDiv .arrowRightBtn{
+    background:url(../img/layout/icon_arrowright.png);
+    float: right;
+    opacity:0.5;
+    cursor:pointer;
+}
+
+/*4~7天*/
+#danZhanTianQiYuBaoCon .confourDay{
+    background: #ffffff;
+    border-bottom: 3px solid #e8914c;
+    border-top: 3px solid #65adda;
+}
+#danZhanTianQiYuBaoCon .conRightfourDay{
+    width: 660px;
+    padding:0;
+}
+#danZhanTianQiYuBaoCon .conRightfourDay .Carousel #four_seven_day li{
+    width: 95px;
+}
+#danZhanTianQiYuBaoCon .conRightfourDay .Carousel #fifUl li{
+    width: 83px;
+}
+#danZhanTianQiYuBaoCon .conRightfourDay .Carousel ul li span{
+    color:#333333;
+}
+#danZhanTianQiYuBaoCon .conRightfourDay .Carousel ul li{
+    border-right: 1px solid rgba(160, 160, 160, 0.3);
+    height: 100%;
+    cursor:pointer;
+    position:relative;
+}
+#danZhanTianQiYuBaoCon .conRightfourDay .Carousel ul li.currentBlue{
+    background-color:#d9f1ff;
+}
+#danZhanTianQiYuBaoCon .conRightfourDay .Carousel ul li.currentBlue:before{
+    content:'';
+    position: absolute;
+    left:0;
+    bottom: -23px;
+    width:66px;
+    height:21px;
+    background:url(../img/layout/icon_arroworange.png);
+}
+
+#danZhanTianQiYuBaoCon .conRightfourDay .e img{
+    margin: 10px 0 0 16px;
+}
+#danZhanTianQiYuBaoCon .conRightfourDay .b img{
+    margin: 0 0 0 33px;
+}
+#danZhanTianQiYuBaoCon .conRightfourDay .f{
+    height:25px;
+}
+#danZhanTianQiYuBaoCon .conRightfourDay .Carousel{
+    padding-top:0;
+}
+#danZhanTianQiYuBaoCon .conRightfourDay .Carousel ul{
+    width:670px;
+    height: 100%;
+}
+#danZhanTianQiYuBaoCon .conRightfourDay .curve{
+    height: 125px;
+}
+#danZhanTianQiYuBaoCon .conRightfourDay .a{
+    font-size: 15px;
+    margin-top: 5px;
+}
+#danZhanTianQiYuBaoCon .conRightfourDay .Carousel{
+    height: 100%;
+}
+#danZhanTianQiYuBaoCon .conFourDay{
+    background: #ffffff;
+    height: 280px;
+    border-bottom: 3px solid #65adda;
+}
+#danZhanTianQiYuBaoCon .conFourDay .conRight span{
+    color:#333333;
+}
+#danZhanTianQiYuBaoCon .conFourDay .conRight .Carousel ul li{
+    border-right:1px solid rgba(185, 183, 183, 0.3);
+}
+#danZhanTianQiYuBaoCon .conFourDay .conRight .curve{
+    height: 100px;
+}
+#danZhanTianQiYuBaoCon .conRightfourDay .g{
+    font-size: 12px;
+    margin: 5px 0 10px 0;
+}
+#danZhanTianQiYuBaoCon .conFourDay .conRight .sunset{
+    background:url(../img/layout/icon_sunriseorange.png) no-repeat left center;
+}
+#danZhanTianQiYuBaoCon .conFourDay .conRight .sunrise{
+    background:url(../img/layout/icon_sunsetgorange.png) no-repeat left center;
+}
+#danZhanTianQiYuBaoCon .confourDay  .conRight .Carousel{
+    overflow:initial;
+}
+
+#danZhanTianQiYuBaoCon .main{
+    display:none;
+}
+
+
+/*滚动条*/
+#danZhanTianQiYuBaoCon .conFourDay .Carousel .mCSB_container{
+    height:100%;
+}
+#danZhanTianQiYuBaoCon .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar{
+    height: 7px;
+    margin: 5px auto;
+}
+#danZhanTianQiYuBaoCon .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+    background-color: rgba(86, 86, 86, 0.75);
+}
+#danZhanTianQiYuBaoCon  .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_draggerRail{
+    height: 7px;
+    margin: 5px 0;
+}
+#danZhanTianQiYuBaoCon .mCSB_scrollTools .mCSB_draggerRail{
+    background-color: rgba(0,0,0,.3);
+}
+#danZhanTianQiYuBaoCon .mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar,#danZhanTianQiYuBaoCon .mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar{
+    background-color: rgba(86, 86, 86, 0.75);
+}
+#danZhanTianQiYuBaoCon .mCSB_scrollTools.mCSB_scrollTools_horizontal{
+    bottom:3px;
+}
+#danZhanTianQiYuBaoCon .popopTab{
+    position: absolute;
+    right: 35px;
+    top: 4px;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 1px 15px;
+    background-color: #3ea0de;
+    border-radius: 20px;
+}
+#danZhanTianQiYuBaoCon .popopTab:hover{
+    background-color: #ff9600;
+}
+
+#danZhanTianQiYuBaoCon h3{
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    margin: 0;
+    font-size: 22px;
+    color: #ffffff;
+}
+#danZhanTianQiYuBaoCon #fifUl .b img{
+    margin: 0 0 0 25px;
+}
+
+#seven_day_list li .a{
+    background-color: #efefef;
+    padding: 4px 0 2px 0;
+    margin-left: -1px;
+}
+#seven_day_list li:nth-of-type(2n){
+    background-color: rgba(185, 185, 185, 0.1); ;
+}
+
+#fifUl li .c{
+    margin-top: 5px;
+}

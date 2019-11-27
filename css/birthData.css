@@ -1,0 +1,79 @@
+
+*{
+    box-sizing: border-box;
+}
+/*--统计数据查询-生育期数据  */
+
+#birthDataCon{
+    display:none;
+    min-width: 250px;
+    position: absolute;
+    left:480px;
+    top:150px;
+    z-index: 3;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 0 4px #868686;
+    -moz-box-shadow:0 0 4px #868686;
+    -o-box-shadow: 0 0 4px #868686;
+    -ms-box-shadow: 0 0 4px #868686;
+    box-shadow: 0 0 4px #868686;
+}
+
+#birthDataCon .popopDel{
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+}
+#birthDataCon .popopDel:hover{
+    color:red;
+    text-decoration: none;
+}
+#birthDataCon .top{
+    height: 32px;
+    line-height: 27px;
+    background:#0065a5;
+}
+#birthDataCon .top .title{
+    display:inline-block;
+    font-size:18px;
+    margin: 1px 0 0 10px;
+    color:#ffffff;
+    vertical-align: middle;
+}
+#birthDataCon .top span{
+    display:inline-block;
+    color:#fff;
+    font-size: 15px;
+}
+#birthDataCon .top .time{
+    margin-left:20px;
+}
+#birthDataCon .top .text{
+    margin-left:5px;
+}
+
+#birthDataCon .con{
+    padding: 5px 5px 10px 5px;
+    overflow: hidden;
+}
+#birthDataCon .con .right{
+    float:left;
+    margin-left:20px;
+}
+#birthDataCon .con .right span{
+    font-size: 13px;
+    color:#333333;
+}
+#birthDataCon .con .right li{
+    margin:3px 0;
+}
+#birthDataCon .con .right li.current span{
+    color:#0065a5;
+}

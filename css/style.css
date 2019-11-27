@@ -1,0 +1,110 @@
+*{
+    box-sizing: border-box;
+}
+
+/*地图要素浮动框*/
+#floatMapDiv,#floatMapDiv1,#floatMapDiv2,#floatMapDiv3,#floatMapDiv4,#floatMapDiv5,#floatMapDiv6,#floatMapDiv7{
+    display:none;
+    position: absolute;
+    top:110px;
+    left:140px;
+    overflow:hidden;
+    z-index: 999;
+    background-color: rgba(45, 132, 204,0.8);
+    border-radius: 3px;
+    /* -webkit-transform: translateX(-50%);
+       -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+         -o-transform: translateX(-50%);
+            transform: translateX(-50%); */
+}
+#floatMapDiv span,#floatMapDiv1 span,#floatMapDiv2 span,#floatMapDiv3 span,#floatMapDiv4 span,
+#floatMapDiv5 span,#floatMapDiv6 span,#floatMapDiv7 span{
+    display:inline-block;
+    font-size:19px;
+    color:#ffffff;
+    /* margin: 0 5px; */
+}
+#floatMapDiv .floatMapDivTime,#floatMapDiv1 .floatMapDivTime,#floatMapDiv2 .floatMapDivTime,
+#floatMapDiv3 .floatMapDivTime,#floatMapDiv4 .floatMapDivTime{
+    margin-left:5px;
+}
+#floatMapDiv .floatMapDivEle,#floatMapDiv1 .floatMapDivEle,#floatMapDiv2 .floatMapDivEle,
+#floatMapDiv3 .floatMapDivEle,#floatMapDiv4 .floatMapDivEle,#floatMapDiv5 .floatMapDivEle{
+    margin-right:10px;
+}
+#floatMapDiv1 .floatMapDivTab,#floatMapDiv2 .floatMapDivTab,#floatMapDiv3 .floatMapDivTab,
+#floatMapDiv4 .floatMapDivTab,#floatMapDiv5 .floatMapDivTab,#floatMapDiv6 .floatMapDivTab,
+#floatMapDiv7 .floatMapDivTab{
+    cursor:pointer;
+    margin:3px 10px;
+    font-size: 19px;
+}
+#floatMapDiv1 span.currentOrange,#floatMapDiv2 span.currentOrange,#floatMapDiv3 span.currentOrange,
+#floatMapDiv4 span.currentOrange,#floatMapDiv5 span.currentOrange,#floatMapDiv6 span.currentOrange,
+#floatMapDiv7 span.currentOrange{
+    color:orange;
+    font-size: 19px;
+}
+
+#floatMapDiv6{
+    left: 445px;
+}
+
+#floatMapDiv7{
+    left: 200px;
+}
+/*图例*/
+#LegendMapDiv{
+    display:none;
+    position: absolute;
+    left:10px;
+    bottom:60px;
+    background: rgba(0,0,0,.5);
+}
+
+/*标题*/
+#headerDiv{
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:50px;
+    background-color: #ffffff;
+}
+#headerDiv h1{
+    font-size: 26px;
+    color: #0065a5;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#headerDiv  .titleRight{
+    float: right;
+    margin-right: 35px;
+}
+#headerDiv  .titleRight span{
+    display:inline-block;
+    margin: 15px 12px 0 12px;
+}
+#headerDiv  .titleRight span.a{
+    background:url(../img/layout/icon_sunset_gray.png) no-repeat left center;
+    padding-left:25px;
+}
+#headerDiv  .titleRight span.b{
+    background:url(../img/layout/icon_sunrise_gray.png) no-repeat left 0px;
+    padding-left:32px;
+}
+#headerDiv .headerOutBtn{
+    position: absolute;
+    right:12px;
+    top:13px;
+    cursor:pointer;
+    width:24px;
+    height: 24px;
+    background:url(../img/layout/out.png) no-repeat;
+    background-size:100%;
+}
+#headerDiv .headerOutBtn:hover{
+    background-image: url(../img/layout/out_blue.png);
+}

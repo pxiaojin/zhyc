@@ -1,0 +1,91 @@
+
+*{
+    box-sizing: border-box;
+}
+/*病虫害等级框 */
+
+#bingChongHiaDengJiCon{
+    /*display:none;*/
+    width: 115px;
+    position: absolute;
+    left:10px;
+    bottom:20px;
+    z-index: 3;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 0 4px #868686;
+    -moz-box-shadow:0 0 4px #868686;
+    -o-box-shadow: 0 0 4px #868686;
+    -ms-box-shadow: 0 0 4px #868686;
+    box-shadow: 0 0 4px #868686;
+}
+
+#bingChongHiaDengJiCon .popopDel{
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+}
+#bingChongHiaDengJiCon .popopDel:hover{
+    color:red;
+    text-decoration: none;
+}
+#bingChongHiaDengJiCon .top{
+    height: 20px;
+    line-height: 27px;
+}
+#bingChongHiaDengJiCon .top .title{
+    display:inline-block;
+    font-size:14px;
+    margin: 1px 0 0 10px;
+    color:#333333;
+    vertical-align: middle;
+}
+#bingChongHiaDengJiCon .top span{
+    display:inline-block;
+    color:#fff;
+    font-size: 13px;
+}
+#bingChongHiaDengJiCon .top .time{
+    margin-left:20px;
+}
+#bingChongHiaDengJiCon .top .text{
+    margin-left:5px;
+}
+
+#bingChongHiaDengJiCon .con{
+    padding: 5px 5px 10px 5px;
+    overflow: hidden;
+}
+#bingChongHiaDengJiCon .con .left{
+    float: left;
+    padding-top:5px;
+    width:130px;
+    text-align:center;
+}
+#bingChongHiaDengJiCon .con .iconSpan{
+    display:block;
+    padding-left:16px;
+}
+#bingChongHiaDengJiCon .con .describe{
+    display:block;
+    font-size: 20px;
+    color:#0065a5;
+    margin-top:10px;
+}
+#bingChongHiaDengJiCon .con .right{
+    float:left;
+    margin-left:20px;
+}
+#bingChongHiaDengJiCon .con .right span{
+    font-size: 12px;
+    color:#333333;
+}
+#bingChongHiaDengJiCon .con .right li.current span{
+    color:#0065a5;
+}

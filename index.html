@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="keywords" content="气象数据综合平台，天气预报，地图，风，温度，降水，雨，云，压力">
+    <title>遵义烟草互联网</title>
+    <link rel="icon" type="image/png" href="./img/logo.png" sizes="32x32">
+    <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css"/>   
+    <link rel="stylesheet" href="css/ol.css">
+    <link rel="stylesheet" type="text/css" href="css/SliderBar.css"/>
+    <link rel="stylesheet" type="text/css" href="css/leftmain.css"/>
+    <link rel="stylesheet" type="text/css" href="css/nav.css" />
+	<link rel="stylesheet" type="text/css" href="css/climateresourceMap.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <style type="text/css">
+        html, body, #map {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 地图 -->
+    <div class="map" id="map" style="position: relative;"></div>
+
+    <!-- 测距 -->
+    <!-- <div id="menu">
+        <div class="selectADiv">
+            <select id="type" style="margin-right:80px;">
+                <option value="length">长度</option>
+                <option value="area">面积</option>
+            </select>
+        </div>
+        <span class="ol_lonlat"></span>
+        <label class="checkbox label" style="display:none"><input type="checkbox" id="geodesic" />使用大地测量</label>
+        <span id="removes"><img src="img/layout/cancel.png" height="22" width="53" alt="" /></span>
+    </div> -->
+
+    <div style="position: absolute;left: 0;top: 0;z-index: 999;">
+        <!-- 地图切换 -->
+        <!-- <div id="config_map">
+            <p>
+                <span>影像图</span>
+            </p>
+            <p>
+                <span>地形图</span>
+            </p>
+        </div> -->
+        <!-- 模式切换 -->
+        
+    </div>   
+
+    <div id="config_map">
+        <span class="dixing current">地形图</span><span class="yingxiang">影像图</span>
+    </div> 
+
+    <!-- 时间轴 -->
+    <div class="timeAxis slibarDiv delete_only">
+        <div class="slibarTop" id="slibarTop">
+            <div class="slibarT"></div>
+            <div id="slider"></div>
+        </div>
+        <div id="bar">
+
+        </div>
+        <div id="scale"></div>
+        <div class="" id="timeInput"></div>
+
+        <!-- 时间步长 -->
+        <div id="timeBuChange">
+            <span class="timeBuChangeSpan">步长：</span>
+            <select name="" id="">
+                <option value="1" selected="selected">1h</option>
+                <option value="3">3h</option>
+                <option value="6">6h</option>
+            </select>
+        </div>
+        <a href="javascript:void(0);" class="slibarPlayBtn" onclick="sliderBar.play()"><span></span></a>
+        <a href="javascript:void(0);" class="slibarUpBtn" id="slibarUpBtn" onclick="sliderBar.clickPrevious()"><span></span></a>
+        <a href="javascript:void(0);" class="slibarDownBtn" onclick="sliderBar.clickNext()"><span></span></a>
+
+        <!-- 未来7天 -->
+        <div id="futureSevenDay">
+            <a href="javascript:;" onclick="sliderBar.chooseSevenDay(0)">今天</a>
+            <a href="javascript:;" onclick="sliderBar.chooseSevenDay(1)">明天</a>
+            <a href="javascript:;" onclick="sliderBar.chooseSevenDay(2)">后天</a>
+            <a href="javascript:;" class="dayfour" onclick="sliderBar.chooseSevenDay(3)">14日</a>
+            <a href="javascript:;" class="dayfive" onclick="sliderBar.chooseSevenDay(4)">25日</a>
+            <a href="javascript:;" class="daysix" onclick="sliderBar.chooseSevenDay(5)">30日</a>
+            <a href="javascript:;" class="dayseven" onclick="sliderBar.chooseSevenDay(6)">7日</a>
+        </div>
+
+
+    </div>
+    
+    <!-- 菜单一级导航 -->
+    <div class="navOne">
+        <ul>
+            <li id="nav1_grow" class="navOneList navOneCurrent"><a href="javascript:;">生长环境监测</a></li>
+            <li id="nav1_fc" class="navOneList"><a href="javascript:;">农用天气预报</a></li>
+            <li class="navOneList"><a href="javascript:;">气象灾害预警</a></li>
+            <li class="navOneList"><a href="javascript:;">病虫害监测预警</a></li>
+            <li id="nav1_statis" class="navOneList"><a href="javascript:;">统计数据查询</a></li>
+            <li class="navOneList"><a href="javascript:;">产量质量预测</a></li>
+            <li class="navOneList"><a href="javascript:;">气象科普知识</a></li>
+        </ul>
+    </div>
+
+    <!-- 左侧菜单 生长环境监测 -->
+    <div class="leftMain" id="leftMain">
+        <div class="MainElement">
+            <ul class="maxUl">
+                <li id="profile_live" class="current">
+                    <a id="" href="javascript:;" class="mainBtn layout_tab">烟区天气态势</a>
+                </li>
+                <li id="station">
+                    <a href="javascript:;" class="mainBtn layout_tab">测站天气实况</a>
+                </li>
+                <li>
+                    <a id="live_tt" href="javascript:;" class="mainBtn layout_tab">气温</a>
+                </li>
+                <li>                   
+                    <a id="live_rn" href="javascript:;" class="mainBtn layout_tab">降水量</a>
+                </li>
+                <li>
+                    <a id="live_wind_high" href="javascript:;" class="mainBtn layout_tab">风力风向</a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="mainBtn layout_tab" id="live_rh">相对湿度</a>
+                </li>
+                <!-- <li>                
+                    <a id="st" href="javascript:;" class="mainBtn layout_tab">土壤温度</a>
+                </li>
+
+                <li>
+                    <a id="srh" href="javascript:;" class="mainBtn layout_tab">土壤相对湿度</a>
+                </li> -->
+                <li>
+                    <a id="suitable" href="javascript:;" class="mainBtn layout_tab">适宜度评价</a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="mainBtn layout_tab" id="">生育高清影像</a>
+                </li>              
+            </ul>
+        </div>  
+    </div>
+
+
+    <!-- 左侧菜单 农用天气预报 -->
+    <div class="leftMain" id="leftMain">
+        <div class="MainElement">
+            <ul class="maxUl">
+                <li>
+                    <a id="sin_fc" href="javascript:;" class="mainBtn layout_tab">单站天气预报</a>
+                </li>
+                <li>
+                    <a id="fc_tt" href="javascript:;" class="mainBtn layout_tab">气温</a>
+                </li>
+                <!-- <li>                  
+                    <a id="fc_maxt" href="javascript:;" class="mainBtn layout_tab">最高温度</a>
+                </li>
+                <li>              
+                    <a id="fc_mint" href="javascript:;" class="mainBtn layout_tab">最低温度</a>
+                </li> -->
+                <li>         
+                    <a id="fc_rn" href="javascript:;" class="mainBtn layout_tab">日降水量</a>
+                </li>                         
+                <li>
+                    <a href="javascript:;" class="mainBtn layout_tab" id="fc_farm">农事活动预报</a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="mainBtn layout_tab" id="fc_sui">生长适宜度预报</a>
+                </li>   
+            </ul>
+        </div>  
+    </div> 
+
+
+    <!-- 左侧菜单 气象灾害预警 -->
+    <div class="leftMain" id="leftMain">
+        <div class="MainElement">
+            <ul class="maxUl">
+                <li>
+                    <a id="weather_warn" href="javascript:;" class="mainBtn layout_tab">气象灾害实况</a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="mainBtn layout_tab" id="">气象灾害预测</a>
+                </li>
+            </ul>
+        </div>  
+    </div>
+
+    <!-- 左侧菜单 病虫害监测预警 -->
+    <div class="leftMain" id="leftMain">
+       <div class="MainElement">
+           <ul class="maxUl">
+               <li>
+                   <a id="" href="javascript:;" class="mainBtn layout_tab">病虫害实况</a>
+               </li>
+               <li>
+                   <a href="javascript:;" class="mainBtn layout_tab" id="">病虫害预测</a>
+               </li>
+           </ul>
+       </div>  
+    </div>
+
+    <!-- 左侧菜单 统计数据查询 -->
+    <div class="leftMain" id="leftMain">
+        <div class="MainElement">
+            <ul class="maxUl">
+                <li>
+                    <div class="rgbaDiv rgbaDivMoShi" style="height: 88px;"></div>
+                    <a href="javascript:;" class="mainBtn layout_tab">气候数据</a>
+                    <ul class="erJiUl">
+                        <li>
+                            <i class="shuJuI"></i>
+                            <a id="daydata" href="javascript:;" class="erJiBtn erJiBtnOk">日数据</a>
+                        </li>
+                        <li>
+                            <i class="shuJuI"></i>
+                            <a id="meadow" href="javascript:;" class="erJiBtn erJiBtnOk">侯旬月数据</a>
+                            <div id="meadow_select" class="sanJiUl">
+                                <p data-value="avg_at" class="currentBlue floatMapDivTab">平均气温</p>
+                                <p data-value="daewoo10_jiwen" class="floatMapDivTab">＞10℃有效积温</p>
+                                <p data-value="daewoo35_day" class="floatMapDivTab">≥35℃日数</p>
+                                <p data-value="rn" class="floatMapDivTab">平均降水量</p>
+                                <p data-value="rn_day" class="floatMapDivTab">降水日数</p>
+                                <p data-value="daewoo5_wind" class="floatMapDivTab">5级以上大风</p>
+                                <p data-value="ssd" class="floatMapDivTab">平均日照时数</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="shuJuI"></i>
+                            <a id="growth" href="javascript:;" class="erJiBtn erJiBtnOk">生育期数据</a>
+                            <div id="growth_select" class="sanJiUl">
+                                <p data-value="0" class="currentBlue floatMapDivTab">育苗期</p>
+                                <p data-value="1" class="floatMapDivTab">移栽生根期</p>
+                                <p data-value="2" class="floatMapDivTab">旺盛期</p>
+                                <p data-value="3" class="floatMapDivTab">成熟采烤期</p>
+                            </div>
+                        </li>                                
+                    </ul> 
+                </li>
+
+                <li>
+                    <div class="rgbaDiv rgbaDivMoShi" style="height: 57px;"></div>
+                    <a href="javascript:;" class="mainBtn layout_tab">本生长季气候</a>
+                    <ul class="erJiUl">
+                        <li>
+                            <i class="shuJuI"></i>
+                            <a id="meadow_season" href="javascript:;" class="erJiBtn erJiBtnOk">月旬数据</a>
+                            <div id="meadow_season_select" class="sanJiUl">
+                                <p data-value="avg_at" class="currentBlue floatMapDivTab">平均气温</p>
+                                <p data-value="daewoo10_jiwen" class="floatMapDivTab">平均最高气温</p>
+                                <p data-value="daewoo35_day" class="floatMapDivTab">平均最低气温</p>
+                                <p data-value="rn" class="floatMapDivTab">平均降水量</p>
+                                <p data-value="ssd" class="floatMapDivTab">累计日照时数</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="shuJuI"></i>
+                            <a id="grow_season" href="javascript:;" class="erJiBtn erJiBtnOk">生育期数据</a>
+                            <div id="grow_season_select" class="sanJiUl">
+                                <p data-value="0" class="currentBlue floatMapDivTab">育苗期</p>
+                                <p data-value="1" class="floatMapDivTab">移栽生根期</p>
+                                <p data-value="2" class="floatMapDivTab">旺盛期</p>
+                                <p data-value="3" class="floatMapDivTab">成熟采烤期</p>
+                            </div>
+                        </li>                                
+                    </ul> 
+                </li>
+
+                <li>
+                    <div class="rgbaDiv rgbaDivMoShi" style="height: 150px;"></div>
+                    <a href="javascript:;" class="mainBtn layout_tab">烟草数据</a>
+                    <ul class="erJiUl">
+                        
+                        <li>
+                            <i class="mianJiI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn erJiBtnOk">种植面积</a>
+                        </li>
+                        <li>
+                            <i class="shuJuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn erJiBtnOk">灾害数据</a>
+                        </li>
+                        <li>
+                            <i class="shuJuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn erJiBtnOk">病虫害数据</a>
+                        </li>                               
+    
+                        <li>
+                            <i class="shuJuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn erJiBtnOk">产量数据</a>
+                        </li>
+                        <li>
+                            <i class="shuJuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn erJiBtnOk">质量数据</a>
+                        </li>
+                    </ul> 
+                </li>
+    
+                <li>
+                    <div class="rgbaDiv rgbaDivMoShi" style="height: 491px;"></div>
+                    <a href="javascript:;" class="mainBtn layout_tab" id="climateresourceMapA">烟草气候资源图</a>
+                    <ul class="erJiUl" id="climateresourceMap">
+                        <li id="climateresourceMapOneLi">
+                           <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">≥10℃积温分布图</a>
+                        </li>
+                        <li>
+                           <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">≥20℃日数分布图</a>
+                        </li>
+                        <li>
+                            <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">年平均温度分布图</a>
+                        </li>                               
+    
+                        <li>
+                            <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">年降水量分布图</a>
+                        </li>
+                        <li>
+                           <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">年日照时数分布图</a>
+                        </li>
+                        <li>
+                           <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">烤烟大田期平均温度分布图</a>
+                        </li>
+                         <li>
+                            <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">烤烟大田期降水量分布图</a>
+                        </li>
+                        <li>
+                            <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">烤烟大田期日照时数分布图</a>
+                        </li>
+    
+                        <li>
+                            <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">烤烟成熟期平均温度分布图</a>
+                        </li>
+                        <li>
+                            <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">烤烟成熟期降水量分布图</a>
+                        </li>
+    
+                        <li>
+                           <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">烤烟成熟期日照时数分布图</a>
+                        </li>
+                        <li>
+                            <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">夏旱分布图</a>
+                        </li>
+                        <li>
+                            <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">冰雹路径示意图</a>
+                        </li>
+    
+                        <li>
+                            <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">乡镇烤烟种植气候适宜性分布图</a>
+                        </li>
+    
+                        <li>
+                           <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">烤烟种植区划图</a>
+                        </li>
+                        <li>
+                            <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">稳定通过13℃出日分布图</a>
+                        </li>
+                    </ul> 
+                </li>
+                <li>
+					<div class="rgbaDiv rgbaDivMoShi" style="height: 586px;"></div>
+					<a href="javascript:;" class="mainBtn layout_tab" id="soilMapA">土壤精细化分区</a>
+                    <ul class="erJiUl" id="soilMap">
+                        <li id="soilMapOneLi">
+                            <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">土壤精细化分区图</a>
+                        </li>
+                        <li>
+                            <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">植烟土壤有机质图</a>
+                        </li>
+                        <li>
+                            <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">植烟土壤pH值图</a>
+                        </li>                               
+    
+                        <li>
+                            <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">植烟土壤碱解氮含量图</a>
+                        </li>
+                        <li>
+                           <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">烟土壤有效磷含量图</a>
+                        </li>
+                        <li>
+                           <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">植烟土壤速效钾含量图</a>
+                        </li>
+                         <li>
+                            <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">植烟土壤交换性钙含量图</a>
+                        </li>
+                        <li>
+                            <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">植烟土壤交换性镁含量图</a>
+                        </li>
+    
+                        <li>
+                            <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">植烟土壤有效硫含量图</a>
+                        </li>
+                        <li>
+                            <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">植烟土壤水溶性氯含量图</a>
+                        </li>
+    
+                        <li>
+                           <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">植烟土壤有效铁含量图</a>
+                        </li>
+                        <li>
+                            <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">植烟土壤有效锰含量图</a>
+                        </li>
+                        <li>
+                            <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">植烟土壤有效铜含量图</a>
+                        </li>
+    
+                        <li>
+                            <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">植烟土壤有效锌含量图</a>
+                        </li>
+    
+                        <li>
+                           <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">植烟土壤有效硼含量图</a>
+                        </li>
+                        <li>
+                            <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">植烟土壤有效钼含量图</a>
+                        </li>
+                        <li>
+                            <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">植烟土壤粉粒含量图</a>
+                        </li>
+                        <li>
+                            <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">植烟土壤阳离子代换量图</a>
+                        </li>
+                        <li>
+                            <i class="fenBuTuI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">植烟土壤质量评价图</a>
+                        </li>
+                    </ul> 
+                </li>
+                
+            </ul>
+        </div>  
+    </div>
+
+    <!-- 左侧菜单 产量质量预测 -->
+    <div class="leftMain" id="leftMain">
+       <div class="MainElement">
+           <ul class="maxUl">
+               <li>
+                   <a id="" href="javascript:;" class="mainBtn layout_tab">气候预测</a>
+               </li>
+               <li>
+                   <a href="javascript:;" class="mainBtn layout_tab" id="">产量预测</a>
+               </li>
+               <li>
+                   <a href="javascript:;" class="mainBtn layout_tab" id="">质量预测</a>
+               </li>
+   
+           </ul>
+       </div>  
+    </div>
+    
+    <!-- 左侧菜单 气象科普知识 -->
+    <div class="leftMain" id="leftMain">
+        <div class="MainElement">
+            <ul class="maxUl">
+                <li>  
+                    <a href="javascript:;" class="mainBtn layout_tab">烤烟气象</a> 
+                </li>
+                <li>  
+                    <a href="javascript:;" class="mainBtn layout_tab">电视气象</a> 
+                </li>
+                <li>
+                    <div class="rgbaDiv rgbaDivMoShi" style="height: 150px;"></div>
+                    <a href="javascript:;" class="mainBtn layout_tab">气象常识</a>
+                    <ul class="erJiUl">
+                        
+                        <li>
+                            <i class="qiXiangChangShiI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">xxxxxx</a>
+                        </li>
+                        <li>
+                            <i class="qiXiangChangShiI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">xxxxxx</a>
+                        </li>
+                        <li>
+                            <i class="qiXiangChangShiI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">xxxxxx</a>
+                        </li>                               
+    
+                        <li>
+                           <i class="qiXiangChangShiI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">xxxxxx</a>
+                        </li>
+                        <li>
+                           <i class="qiXiangChangShiI"></i>
+                            <a id="" href="javascript:;" class="erJiBtn">xxxxxx</a>
+                        </li>
+                    </ul> 
+                </li>
+            </ul>
+        </div>  
+    </div>
+
+    <!-- 测站天气实况弹出框 -->
+    <div id="ceZhanShiKuangDiv"></div>
+
+    <!-- 测站天气实况曲线弹出框 -->
+    <div id="ceZhanShiKuangQuXianDiv"></div>
+
+    <!-- 农用天气预报-单站天气预报弹出框 -->
+    <div id="danZhanTianQiYuBaoDiv"></div>
+
+    <!-- 生长环境监测-适宜度评价弹出框 -->
+    <div id="shiYiDuDiv"></div>
+
+    <!-- 农用天气预报-农事活动预报 -->
+    <div id="farmingActivityDiv"></div>
+
+    <!-- 病虫害等级框 -->
+    <div id="bingChongHaiDengJiDiv"></div>
+
+    <!-- 统计数据查询-日数据 -->
+    <div id="dayDataDiv"></div>
+
+    <!-- 统计数据查询-候旬月数据曲线框 -->
+    <div id="monthDataCurveDiv"></div>
+
+    <!-- 统计数据查询-生育期数据 -->
+    <div id="birthDataDiv"></div>
+
+    <!-- 产量质量预测-气候预测 -->
+    <div id="climateForecastDiv"></div>
+
+    <!-- 统计数据查询-生育期数据 -->
+    <div id="birthDataDiv"></div>
+
+    <!-- 产量质量预测-气候预测 -->
+    <div id="climateForecastDiv"></div>
+
+    <!-- 产量质量预测-产量预测 -->
+    <div id="yieldForecastDiv"></div>
+
+
+    <!-- 统计数据查询-烟草气候资源图 -->
+    <div id="climateresourceMapDiv" style="display:none;">
+        <div id="climateresourceMapCon">
+            <a href="javascript:;" class="popopDel">X</a>
+            <div class="con" id="climateresourceMapScrollCon">
+                <ul id="climateresourceMapConScrollUl">         
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- 遵义市植烟土壤精细化分区 -->
+    <div id="soilMapDiv" style="display:none;">
+        <div id="soilMapCon">
+            <a href="javascript:;" class="popopDel">X</a>
+            <div class="con" id="soilMapScrollCon">
+                <ul id="soilMapConScrollUl">
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- 地图要素浮动框 -->
+    <!-- <div id="floatMapDiv" class="delete_only">
+        <span class="floatMapDivTime">15时</span><span class="floatMapDivEle">气温</span>
+    </div> -->
+    <div id="floatMapDiv1" class="delete_only">       
+        <!-- <span class="floatMapDivEle"></span> -->
+        <span data-value="AT"  class="floatMapDivTab currentOrange"><span class="floatMapDivTime"></span>气温</span>
+        <span data-value="AVGT24" class="floatMapDivTab">24h平均气温</span>
+        <span data-value="MAXT24" class="floatMapDivTab">24h最高气温</span>
+    </div>
+    <div id="floatMapDiv2" class="delete_only">       
+        <!-- <span class="floatMapDivEle"></span> -->
+        <span data-value="RH" class="floatMapDivTab currentOrange"><span class="floatMapDivTime"></span>湿度</span>
+        <span data-value="AVGRH24" class="floatMapDivTab">24h平均湿度</span>
+        <span data-value="MAXRH24" class="floatMapDivTab">24h最大湿度</span>
+    </div>
+    <div id="floatMapDiv3" class="delete_only">
+        <span class="floatMapDivTime"></span>
+        <!-- <span class="floatMapDivEle"></span> -->
+        <span data-value="WS" class="floatMapDivTab currentOrange">整点风力风向</span>
+        <span data-value="MAXWS" class="floatMapDivTab">24h最大风力风向</span>
+    </div>
+    <div id="floatMapDiv4" class="delete_only">
+        <span class="floatMapDivTime"></span>
+        <!-- <span class="floatMapDivEle"></span> -->
+        <span data-value="RAIN" class="floatMapDivTab currentOrange">1h降水量</span>
+        <span data-value="RAIN03" class="floatMapDivTab">3h降水量</span>
+        <span data-value="RAIN06" class="floatMapDivTab">6h降水量</span>
+        <span data-value="RAIN12" class="floatMapDivTab">12h降水量</span>
+        <span data-value="RAIN24" class="floatMapDivTab">24h降水量</span>
+    </div>
+    <div id="floatMapDiv5" class="delete_only">
+        <!-- <span class="floatMapDivEle">气温</span> -->
+        <span data-value="TAVG"  class="floatMapDivTab currentOrange">平均气温</span>
+        <span data-value="TMAX" class="floatMapDivTab">最高气温</span>
+        <span data-value="TMIN" class="floatMapDivTab">最低气温</span>
+    </div>
+    <!-- 未来7天 地图浮动框 气温 -->   
+    <div id="floatMapDiv6" class="delete_only">   
+        <span class="floatMapDivTab one_date currentOrange">19日</span>
+        <span class="floatMapDivTab two_date">20日</span>
+        <span class="floatMapDivTab thr_date">21日</span>
+        <span class="floatMapDivTab four_date">22日</span>
+        <span class="floatMapDivTab five_date">23日</span>
+        <span class="floatMapDivTab six_date">24日</span>
+        <span class="floatMapDivTab sev_date">25日</span>
+    </div>
+    <!-- 未来7天 地图浮动框 降水 -->  
+    <div id="floatMapDiv7" class="delete_only">
+        <span class="floatMapDivTab one_date currentOrange">19日</span>
+        <span class="floatMapDivTab two_date">20日</span>
+        <span class="floatMapDivTab thr_date">21日</span>
+        <span class="floatMapDivTab four_date">22日</span>
+        <span class="floatMapDivTab five_date">23日</span>
+        <span class="floatMapDivTab six_date">24日</span>
+        <span class="floatMapDivTab sev_date">25日</span>
+    </div>
+
+    <!-- 图例 -->
+    <div id="LegendMapDiv" class="delete_only">
+        <!-- <img src="img/legend_ele/1.png" width="50" alt="" /> -->
+        <canvas id="cav"></canvas>
+    </div>
+
+    <!-- 标题 -->
+    <div id="headerDiv">
+        <h1>遵义互联网+产量质量预测平台  更新时间(2019/11/26)</h1>
+        <p class="titleRight">
+            <span class="a">06:05 日出</span>
+            <span class="b">18:00 日落</span>
+            <span class="c">2019-11-01 15:00</span>
+        </p>
+        <a href="javascript:;" class="headerOutBtn "></a>
+    </div>
+
+</body>
+    <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>  
+    <script type="text/javascript" src="js/lib/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.mCustomScrollbar.min.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/lib/ol-debug.js"></script>
+    
+    <script type="text/javascript" src="js/Controller/DrawVectorLayer.js"></script>
+    <script type="text/javascript" src="js/lib/plotting/smooth.js"></script>
+    <script type="text/javascript" src="js/Function/tool/LineDataMath.js"></script>
+    <script type="text/javascript" src="js/Function/tool/OLStyleFactory.js"></script>
+
+    <script src="js/lib/SliderBar/laydate/laydate.js"></script>
+     <script src="js/lib/SliderBar/SliderBar.js"></script> 
+     <script src="js/lib/windstream.js"></script>
+    
+    <script data-main="js/main" src="js/lib/require.js"></script>
+    <script type="text/javascript" src="js/move.js"></script>
+    <script type="text/javascript" src="js/leftmain.js"></script>
+    <script type="text/javascript" src="js/nav.js"></script>
+	<script type="text/javascript" src="js/style.js"></script>
+
+    <script>
+        $(function(){
+           
+        //     // 病虫害等级框
+        //     $('#bingChongHaiDengJiDiv').load('bingChongHiaDengJi.html',function(){
+        //         dragPanelMove("#bingChongHiaDengJiCon .top","#bingChongHiaDengJiCon");
+        //     });
+
+            // //产量质量预测-气候预测
+            // $('#climateForecastDiv').load('climateForecast.html',function(){
+            //     dragPanelMove("#climateForecastCon .top","#climateForecastCon");
+            //     climateForecastCon();
+            // });
+            
+            // //产量质量预测-产量预测
+            // $('#yieldForecastDiv').load('yieldForecast.html',function(){
+            //     dragPanelMove("#yieldForecastCon .top","#yieldForecastCon");
+            //     yieldForecastCon();
+            // });    
+        })
+    </script>
+    <script>
+        (function($){
+        $(window).load(function(){
+            $(".content").mCustomScrollbar({
+                 axis:"x"
+            });
+            $(".contenty").mCustomScrollbar({
+                 axis:"y"
+            });
+        });
+     })(jQuery);
+    </script>
+</html>

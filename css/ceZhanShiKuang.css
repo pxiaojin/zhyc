@@ -1,0 +1,136 @@
+
+*{
+    box-sizing: border-box;
+}
+/*--测站天气实况弹出框  */
+/*手工分析*/
+#ceZhanShiKuangCon{
+    display:none;
+    width: 310px;
+    min-height: 200px;
+    position: absolute;
+    left:480px;
+    top:150px;
+    z-index: 3;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 0 4px #868686;
+    -moz-box-shadow:0 0 4px #868686;
+    -o-box-shadow: 0 0 4px #868686;
+    -ms-box-shadow: 0 0 4px #868686;
+    box-shadow: 0 0 4px #868686;
+}
+
+#ceZhanShiKuangCon .popopDel{
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+}
+#ceZhanShiKuangCon .popopDel:hover{
+    color:red;
+    text-decoration: none;
+}
+#ceZhanShiKuangCon .top{
+    height: 32px;
+    line-height: 32px;
+    background:#0065a5;
+}
+#ceZhanShiKuangCon .top .title{
+    display:inline-block;
+    font-size:18px;
+    margin: 1px 0 0 10px;
+    color:#ffffff;
+    vertical-align: middle;
+}
+#ceZhanShiKuangCon .top span{
+    display:inline-block;
+    color:#fff;
+    font-size: 13px;
+}
+#ceZhanShiKuangCon .top .time{
+    margin-left:20px;
+}
+#ceZhanShiKuangCon .top .text{
+    margin-left:5px;
+}
+
+#ceZhanShiKuangCon .con{
+    padding: 5px 5px 10px 5px;
+    overflow: hidden;
+}
+#ceZhanShiKuangCon .con .left{
+    float: left;
+    padding-top:5px;
+    width:126px;
+    text-align:center;
+}
+#ceZhanShiKuangCon .con .iconSpan{
+    display:block;
+    padding-left:16px;
+    padding-top: 15px;
+}
+#ceZhanShiKuangCon .con .describe{
+    display:block;
+    font-size: 20px;
+    color:#0065a5;
+    /* margin-top:10px; */
+}
+#ceZhanShiKuangCon .con .right{
+    float:left;
+    margin-top:15px;
+}
+#ceZhanShiKuangCon .con .right span{
+    font-size: 14px;
+    color:#333333;
+}
+#ceZhanShiKuangCon .con .right .el_name{
+    display: inline-block;
+    width:100px;
+    text-align: right;
+}
+#ceZhanShiKuangCon .con .right li{
+    margin:3px 0;
+}
+#ceZhanShiKuangCon .con .right li.current span{
+    color:#0065a5;
+}
+#stretchingABtn{
+    position: absolute;
+    right: -16px;
+    top: 75px;
+    background: url(../img/layout/stretchingBG.png) no-repeat;
+    background-size: 100%;
+    width: 15px;
+    height: 60px;
+    cursor: pointer;
+}
+#stretchingABtn.currentArrow{
+    background-image: url(../img/layout/stretchingBGArrow.png);
+}
+#ceZhanShiKuangCon .popopTab{
+    position: absolute;
+    right: 35px;
+    top: 4px;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 1px 15px;
+    background-color: #3ea0de;
+    border-radius: 20px;
+}
+#ceZhanShiKuangCon .popopTab:hover{
+    background-color: #ff9600;
+}
+
+#ceZhanShiKuangQuXianDiv{
+    position: absolute;
+    left:327px;
+    top:0;
+    z-index: -10;
+}

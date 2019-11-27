@@ -1,0 +1,106 @@
+
+*{
+    box-sizing: border-box;
+}
+/*--测站天气实况弹出框  */
+/*手工分析*/
+#ceZhanShiKuangQuXianCon{
+    display:none;
+    width: 675px;
+    height: 235px;
+    position: absolute;
+    left:0;
+    top:0;
+    z-index:-2;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 0 4px #868686;
+    -moz-box-shadow:0 0 4px #868686;
+    -o-box-shadow: 0 0 4px #868686;
+    -ms-box-shadow: 0 0 4px #868686;
+    box-shadow: 0 0 4px #868686;
+}
+
+#ceZhanShiKuangQuXianCon .popopDel{
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 30px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: none;
+}
+#ceZhanShiKuangQuXianCon .popopDel:hover{
+    color:red;
+    text-decoration: none;
+}
+#ceZhanShiKuangQuXianCon .top{
+    height: 32px;
+    line-height: 32px;
+    background:#ffffff;
+}
+#ceZhanShiKuangQuXianCon .top .title{
+    display:inline-block;
+    font-size:17px;
+    margin: 1px 0 0 10px;
+    color:#333333;
+    vertical-align: middle;
+}
+#ceZhanShiKuangQuXianCon .rightTab{
+    overflow:hidden;
+    float: right;
+}
+#ceZhanShiKuangQuXianCon .rightTab span{
+    display:inline-block;
+    font-size:14px;
+    color:#333333;
+    margin: 0 10px;
+    cursor:pointer;
+}
+#ceZhanShiKuangQuXianCon .rightTab span.orange{
+    color:#f78414;
+    /* border-bottom: 2px solid #f78414; */
+}
+#ceZhanShiKuangQuXianCon .rightTab i{
+    display: inline-block;
+    width: 2px;
+    height: 14px;
+    border: 1px solid #666666;
+    vertical-align: middle;
+}
+
+
+#ceZhanShiKuangQuXianCon .con{
+    padding:5px 5px 10px 5px;
+}
+#ceZhanShiKuangQuXianCon .conTop{
+    padding:5px;
+}
+#ceZhanShiKuangQuXianCon .conTuLi{
+    overflow:hidden;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+#ceZhanShiKuangQuXianCon .conTuLi .conTuLiSpan{
+    display:inline-block;
+}
+#ceZhanShiKuangQuXianCon .conTuLi .conTuLiImg{
+    display:inline-block;
+    float: right;
+}
+#ceZhanShiKuangQuXianCon .leftTab{
+    position: absolute;
+    right: 12px;
+    top: 35px;
+    background-color: #8ec2f2;
+    /* padding: 2px 5px; */
+}
+
+#ceZhanShiKuangQuXianCon .leftTab span{
+    display:inline-block;
+    color:#ffffff;
+    margin: 0 5px;
+}

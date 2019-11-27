@@ -1,0 +1,113 @@
+
+<link rel="stylesheet" type="text/css" href="css/danZhanTianQiYuBao.css" />
+
+<!-- 农用天气预报-单站天气预报弹出框  -->
+<div id="danZhanTianQiYuBaoCon" class="delete_only">
+    <a href="javascript:;" class="popopDel">X</a>
+    <a href="javascript:;" class="popopTab">实况</a>
+    <h3>绥阳</h3>
+    <div class="top" style="cursor: move;">
+        <div class="leftTab">
+            <span class="orange">今天</span>
+            <span>7天</span>
+            <span>8~15天</span>
+        </div>
+    </div>
+    <!-- 今天 -->
+    <div class="con main" style="display:block;">
+        <div class="conLeft" id="realInfo">
+            <span class="shiKuangTime">10:00实况</span>
+            <span class="temperature">30<i class="unit">℃</i></span>
+            <span class="temperatureHige">30℃</span>
+            <span class="temperatureLow">15℃</span>
+            <!-- <span class="airQuality">32优</span> -->
+            <span class="wind">南风 2级</span>
+            <span class="humidity">相对湿度 20%</span>
+        </div>
+        <div class="conRight">
+            <h5 class="conRightTit">逐小时预报</h5>
+            <span class="sunset" id="sunset_day">今日日落: 18:11</span>
+            <span class="sunrise" id="sunup_day">明日日出: 06:03</span>
+            <div class="Carousel">
+                <ul id="CarouselUl">
+                    <li>
+                        <span class="a">08时</span>
+                        <span class="b"><img src="img/weather/cww02.png" width="30" alt="" /></span>
+                        <div class="curve"></div>
+                        <span class="c">东风</span>
+                        <span class="d">3-4级</span>
+                    </li>
+                </ul>
+                <div id="fcEchart" style="position: absolute;top:90px;height:100px;width:650px;"></div>
+            </div>
+            <div class="arrowDiv">
+                <span class="arrowLeftBtn"></span>
+                <span class="arrowRightBtn"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4~7天 -->
+    <div class="main">
+        <div class="con confourDay confourDayHeight" style="height: 310px;">
+            <div class="conRight conRightfourDay">
+                <div class="Carousel">
+                    <ul class="fourDayUl" id="four_seven_day">
+                        <li class="currentBlue">
+                            <span class="a">24日</span>
+                            <span class="g">今天</span>
+                            <span class="b"><img src="img/xianxingWeather/cww02.png" width="30" alt="" /></span>
+                            <span class="e"><img src="img/xianxingWeather/cww02n.png" width="30" alt="" /></span>
+                            <div class="curve"></div>
+                            <span class="f"><i class="windEI"></i><i class="windEI"></i></span>
+                            <span class="d">3-4级</span>
+                        </li>
+                    </ul>
+                    <div id="se_echart" style="position: absolute;top:140px;height:125px;width:670px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="con conFourDay">
+            <div class="conRight" style="width:660px;">
+                <h5 class="conRightTit" id="sevTit" style="padding-left:10px;color: #333333; margin-bottom: 15px;">逐小时预报</h5>
+                <span class="sunset" id="sunset_sev" style="color:orange;">今日日落 18:11</span>
+                <span class="sunrise" id="sunup_sev" style="color:orange;">明日日出 06:03</span>
+                <div class="Carousel content" style="height:221px;">
+                    <ul id="seven_day_list" class="clearfix">
+                        <li>
+                            <span class="a">10时</span>
+                             <span class="b"><img src="img/xianxingWeather/cww02.png" width="30" alt="" /></span>
+                            <div class="curve"></div>
+                            <span class="c">东风</span>
+                            <span class="d">3-4级</span>
+                        </li>
+                    </ul>
+                    <div id="seven_day_echart" style="position: absolute;top:48px;height:100px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8~15天 -->
+    <div class="con confourDay  main" style="border-bottom: 3px solid #65adda;height:320px;" >
+        <div class="conRight conRightfourDay">
+            <div class="Carousel">
+                <ul id="fifUl">
+                    <li>
+                        <span class="a">1日</span>
+                        <span class="g">周五</span>
+                        <span class="b"><img src="img/xianxingWeather/cww02.png" width="30" alt="" /></span>
+                        <span class="e"><img src="img/xianxingWeather/cww02n.png" width="30" alt="" /></span>
+                        <div class="curve"></div>
+                        <span class="f"><i class="windEI"></i><i class="windEI"></i></span>
+                        <span class="d">3-4级</span>
+                    </li>  
+                </ul>
+                <div id="fif_echart" style="position: absolute;top:140px;height:125px;width:670px;"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript" src="./js/danZhanTianQiYuBao.js"></script>
+

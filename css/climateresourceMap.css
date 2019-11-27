@@ -1,0 +1,89 @@
+
+*{
+    box-sizing: border-box;
+}
+/*统计数据查询-烟草气候资源图  */
+
+#climateresourceMapCon{
+    /*display:none;*/
+    position: absolute;
+    left: 35%;
+    top: 150px;
+    z-index: 3;
+    -webkit-box-shadow: 0 0 4px #868686;
+    -moz-box-shadow:0 0 4px #868686;
+    -o-box-shadow: 0 0 4px #868686;
+    -ms-box-shadow: 0 0 4px #868686;
+    box-shadow: 0 0 4px #868686;
+    
+}
+
+#climateresourceMapCon .popopDel{
+    position: absolute;
+    right: 13px;
+    top:0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+    text-decoration: none;
+    z-index: 2;
+}
+#climateresourceMapCon .popopDel:hover{
+    color:red;
+    text-decoration: none;
+}
+#climateresourceMapCon .con{
+   position: relative;
+   width: 850px;
+    height: 720px;
+    overflow: auto;
+}
+#climateresourceMapConScrollUl li{
+    height: 713px;
+}
+
+
+/*遵义市植烟土壤精细化分区  */
+#soilMapCon{
+    /*display:none;*/
+    position: absolute;
+    left: 35%;
+    top: 150px;
+    z-index: 3;
+    -webkit-box-shadow: 0 0 4px #868686;
+    -moz-box-shadow:0 0 4px #868686;
+    -o-box-shadow: 0 0 4px #868686;
+    -ms-box-shadow: 0 0 4px #868686;
+    box-shadow: 0 0 4px #868686;
+    
+}
+
+#soilMapCon .popopDel{
+    position: absolute;
+    right: 13px;
+    top:0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+    text-decoration: none;
+    z-index: 2;
+}
+#soilMapCon .popopDel:hover{
+    color:red;
+    text-decoration: none;
+}
+#soilMapCon .con{
+   position: relative;
+   width: 850px;
+    height: 720px;
+    overflow: auto;
+}
+#soilMapConScrollUl li{
+    height: 713px;
+}
